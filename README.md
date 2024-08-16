@@ -1,2 +1,3 @@
-# ufo_ausstellung
+# UFO-Ausstellung
+
 UFO-Ausstellungsprototyp
