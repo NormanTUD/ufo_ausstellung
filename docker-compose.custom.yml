@@ -1,0 +1,9 @@
+
+version: '3'
+services:
+  simplephpimagegallery:
+    build:
+      context: .
+    volumes:
+      - /home/norman/Downloads:/docker_images/
+
