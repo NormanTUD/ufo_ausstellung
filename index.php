@@ -34,6 +34,87 @@
 		exit(0);
 	}
 
+	function isValidPath($path) {
+		return strpos($path, '..') === false && strpos($path, '/') !== 0 && strpos($path, '\\') !== 0;
+	}
+
+	if (isset($_GET['zip']) && $_GET['zip'] == 1) {
+		$zipname = 'images.zip'; // Name der ZIP-Datei
+		$zip = new ZipArchive;
+		$zipFile = tempnam(sys_get_temp_dir(), 'zip');
+
+		if ($zip->open($zipFile, ZipArchive::CREATE) === TRUE) {
+			// Verarbeitung der folder-Parameter (beliebig viele Ordner)
+			if (isset($_GET['folder'])) {
+				$folders = is_array($_GET['folder']) ? $_GET['folder'] : [$_GET['folder']]; // Handle single or multiple folders                                                                                       
+				foreach ($folders as $folder) {
+					if (isValidPath($folder) && is_dir($folder)) {
+						$realFolderPath = realpath($folder); // Absoluten Pfad des Verzeichnisses holen
+
+						// Dateien im Verzeichnis rekursiv durchlaufen
+						$files = new RecursiveIteratorIterator(
+							new RecursiveDirectoryIterator($realFolderPath, RecursiveDirectoryIterator::SKIP_DOTS),
+							RecursiveIteratorIterator::SELF_FIRST
+						);
+
+						foreach ($files as $file) {
+							if (!$file->isDir()) { // Nur Dateien hinzufügen, keine Verzeichnisse
+								$filePath = $file->getRealPath();
+
+								if(preg_match("/\.(jpg|jpeg|png)$/i", $filePath)) {
+									// Berechnung des relativen Pfades, um die Verzeichnisstruktur beizubehalten
+									$cwd = getcwd();
+
+									$relativePath = str_replace($cwd . DIRECTORY_SEPARATOR, '', $filePath);
+									$relativePath = str_replace($realFolderPath . DIRECTORY_SEPARATOR, '', $relativePath);
+
+									// Datei zur ZIP hinzufügen
+									$zip->addFile($filePath, $relativePath);
+								}
+							}
+						}
+					} else {
+						echo 'Invalid folder: ' . htmlspecialchars($folder);
+						exit(0);
+					}
+				}
+			}
+
+
+			// Verarbeitung der img-Parameter (beliebig viele Bilder)
+			if (isset($_GET['img'])) {
+				$images = is_array($_GET['img']) ? $_GET['img'] : [$_GET['img']]; // Handle single or multiple images
+				foreach ($images as $img) {
+					if (isValidPath($img) && file_exists($img)) {
+						if(preg_match("/\.(jpg|jpeg|png)$/i", $filePath)) {
+							$zip->addFile($img, basename($img)); // Bild zur ZIP hinzufügen
+						}
+					} else {
+						echo 'Invalid image: ' . htmlspecialchars($img);
+						exit(0);
+					}
+				}
+			}
+
+			// ZIP-Datei abschließen
+			$zip->close();
+
+			// HTTP Header für den Download der ZIP-Datei
+			header('Content-Type: application/zip');
+			header('Content-Disposition: attachment; filename="' . $zipname . '"');
+			header('Content-Length: ' . filesize($zipFile));
+
+			// Datei ausgeben und löschen
+			readfile($zipFile);
+			unlink($zipFile);
+
+			exit(0);
+		} else {
+			echo 'Failed to create zip file.';
+			exit(1);
+		}
+	}
+
 	function getImagesInDirectory($directory) {
 		$images = [];
 
@@ -356,9 +437,10 @@
 
 		foreach ($thumbnails as $thumbnail) {
 			if(preg_match('/jpg|jpeg|png/i', $thumbnail["thumbnail"])) {
-				echo '<a data-href="'.urlencode($thumbnail["path"]).'" class="img_element" onclick="load_folder(\'' . $thumbnail['path'] . '\')"><div class="thumbnail_folder">';
+				echo '<a data-href="'.urlencode($thumbnail["path"]).'" class="img_element" data-onclick="load_folder(\'' . $thumbnail['path'] . '\')"><div class="thumbnail_folder">';
 				echo '<img title="'.$thumbnail["counted_thumbs"].' images" data-line="XXX" draggable="false" src="loading.gif" alt="Loading..." class="loading-thumbnail" data-original-url="index.php?preview=' . urlencode($thumbnail['thumbnail']) . '">';
 				echo '<h3>' . $thumbnail['name'] . '</h3>';
+				echo '<span class="checkmark">✅</span>';
 				echo "</div></a>\n";
 			}
 		}
@@ -374,8 +456,9 @@
 					$gps_data_string = " data-latitude='".$gps["latitude"]."' data-longitude='".$gps["longitude"]."' ";
 				}
 
-				echo '<div class="thumbnail" onclick="showImage(\'' . urlencode($image['path']) . '\')">';
+				echo '<div class="thumbnail" data-onclick="showImage(\'' . urlencode($image['path']) . '\')">';
 				echo '<img data-line="YYY" data-hash="'.$hash.'" '.$gps_data_string.' draggable="false" src="loading.gif" alt="Loading..." class="loading-thumbnail" data-original-url="index.php?preview=' . urlencode($image['path']) . '">';
+				echo '<span class="checkmark">✅</span>';
 				echo "</div>\n";
 			}
 		}
@@ -533,9 +616,8 @@
 
 			// Überprüfe, ob das Thumbnail im Cache vorhanden ist
 			$cachedThumbnailPath = $cacheFolder . $thumbnailFileName;
-			if (file_exists($cachedThumbnailPath) && is_valid_image_file($thumbnails_cache)) {
+			if (file_exists($cachedThumbnailPath) && is_valid_image_file($cachedThumbnailPath)) {
 				// Das Thumbnail existiert im Cache, geben Sie es direkt aus
-				dier($cachedThumbnailPath);
 				header('Content-Type: image/jpeg');
 				readfile($cachedThumbnailPath);
 				exit;
@@ -631,11 +713,13 @@
 			die("Wrongly formed geolist: ".$geolist);
 		}
 
+		/*
 		foreach ($untested_files as $file) {
 			if(!preg_match("/\.\.\//", $file) && is_valid_image_file($file)) {
 				$files[] = $file;
 			}
 		}
+		 */
 
 		$s = array();
 
@@ -680,6 +764,44 @@
 		<script src="<?php print $jquery_file; ?>"></script>
 
 		<style>
+			.checkmark {
+				bottom: 5px;
+				left: 5px;
+				font-size: 24px;
+				color: green;
+				display: none; /* initially hidden */
+			}
+
+			.unselect-btn {
+				display: none; /* Initially hidden, only show when something is selected */
+				margin-top: 20px;
+				padding: 10px 20px;
+				background-color: red;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			.unselect-btn:disabled {
+				background-color: #ccc;
+				cursor: not-allowed;
+			}
+
+			.download-btn {
+				display: none; /* Initially hidden, only show when something is selected */
+				margin-top: 20px;
+				padding: 10px 20px;
+				background-color: #4CAF50;
+				color: white;
+				border: none;
+				cursor: pointer;
+			}
+
+			.download-btn:disabled {
+				background-color: #ccc;
+				cursor: not-allowed;
+			}
+
 			.fullscreen {
 				position: fixed;
 				top: 0;
@@ -909,28 +1031,38 @@
 	<body>
 		<input onkeyup="start_search()" onchange='start_search()' type="text" id="searchInput" placeholder="Search...">
 		<button style="display: none" id="delete_search" onclick='delete_search()'>&#x2715;</button>
+		<button class="download-btn" id="downloadBtn" onclick="downloadSelected()">Download</button>
+		<button class="unselect-btn" id="unselectBtn" onclick="unselectSelection()">Unselect</button>
 <?php
-$filename = 'links.txt';
+		$filename = 'links.txt';
 
-if(file_exists($filename)) {
-	$file = fopen($filename, 'r');
+		if(file_exists($filename)) {
+			$file = fopen($filename, 'r');
 
-	if ($file) {
-		while (($line = fgets($file)) !== false) {
-			$parts = explode(',', $line);
+			if ($file) {
+				while (($line = fgets($file)) !== false) {
+					$parts = explode(',', $line);
 
-			$link = trim($parts[0]);
-			$text = trim($parts[1]);
+					$link = trim($parts[0]);
+					$text = trim($parts[1]);
 
-			echo '<a target="_blank" href="' . htmlspecialchars($link) . '">' . htmlspecialchars($text) . '</a><br>';
+					echo '<a target="_blank" href="' . htmlspecialchars($link) . '">' . htmlspecialchars($text) . '</a><br>';
+				}
+
+				fclose($file);
+			}
 		}
-
-		fclose($file);
-	}
-}
 ?>
 		<div id="breadcrumb"></div>
 		<script>
+			var select_image_timer = 0;
+			var select_folder_timer = 0;
+
+			var selectedImages = [];
+			var selectedFolders = [];
+
+			var enabled_selection_mode = false;
+
 			var map = null;
 			var fullscreen;
 
@@ -1008,17 +1140,17 @@ if(file_exists($filename)) {
 						if (result.type === 'folder') {
 							var folderThumbnail = result.thumbnail;
 							if (folderThumbnail) {
-								var folder_line = `<a class='img_element' onclick="load_folder('${encodeURI(result.path)}')" data-href="${encodeURI(result.path)}"><div class="thumbnail_folder">`;
+								var folder_line = `<a class='img_element' data-onclick="load_folder('${encodeURI(result.path)}')" data-href="${encodeURI(result.path)}"><div class="thumbnail_folder">`;
 
 								// Ersetze das Vorschaubild mit einem Lade-Spinner
 								folder_line += `<img src="loading.gif" alt="Loading..." class="loading-thumbnail-search img_element" data-line="Y" data-original-url="index.php?preview=${folderThumbnail}">`;
 
-								folder_line += `<h3>${result.path.replace(/\.\//, "")}</h3></div></a>`;
+								folder_line += `<h3>${result.path.replace(/\.\//, "")}</h3><span class="checkmark">✅</span></div></a>`;
 								$searchResults.append(folder_line);
 							}
 						} else if (result.type === 'file') {
 							var fileName = result.path.split('/').pop();
-							var image_line = `<div class="thumbnail" class='img_element' href="${result.path}" onclick="showImage('${result.path}')">`;
+							var image_line = `<div class="thumbnail" class='img_element' href="${result.path}" data-onclick="showImage('${result.path}')">`;
 
 							var gps_data_string = "";
 
@@ -1390,13 +1522,21 @@ if(file_exists($filename)) {
 
 				var _promise = draw_map_from_current_images();
 
-				loadAndReplaceImages();
+				var _replace_images_promise = loadAndReplaceImages();
 
 				createBreadcrumb(folder);
 
 				await _promise;
 
+				await _replace_images_promise;
+
 				hidePageLoadingIndicator();
+
+				$(".thumbnail_folder").mousedown(onFolderMouseDown);
+				$(".thumbnail_folder").mouseup(onFolderMouseUp);
+
+				$(".thumbnail").mousedown(onImageMouseDown);
+				$(".thumbnail").mouseup(onImageMouseUp);
 			}
 
 			var json_cache = {};
@@ -1503,7 +1643,7 @@ if(file_exists($filename)) {
 					var text = "<img id='preview_" + hash +
 						"' data-line='__A__' src='index.php?preview=" +
 						decodeURI(url.replace(/index.php\?preview=/, "")) +
-						"' style='width: 100px; height: 100px;' onclick='showImage(\"" +
+						"' style='width: 100px; height: 100px;' data-onclick='showImage(\"" +
 						decodeURI(url.replace(/index.php\?preview=/, "")) + "\");' />";
 
 					eval(`markers['${hash}'].on('click', function(e) {
@@ -1635,12 +1775,16 @@ if(file_exists($filename)) {
 				//log("$filtered_folders:", $filtered_folders);
 				//log("data:", data);
 
-				var markers = _draw_map(data);
+				try {
+					var markers = _draw_map(data);
 
-				return {
-					"data": data,
-					"markers": markers
-				};
+					return {
+						"data": data,
+						"markers": markers
+					};
+				} catch (e) {
+					console.error("Error drawing map: ", e)
+				}
 			}
 
 			function createBreadcrumb(currentFolderPath) {
@@ -1682,7 +1826,7 @@ if(file_exists($filename)) {
 
 			$(".no_preview_available").parent().hide();
 
-			function loadAndReplaceImages() {
+			async function loadAndReplaceImages() {
 				$('.loading-thumbnail').each(function() {
 					var $thumbnail = $(this);
 					var originalUrl = $thumbnail.attr('data-original-url');
@@ -1810,6 +1954,161 @@ if(file_exists($filename)) {
 				} catch (error) {
 					console.error('Fehler beim Anzeigen der Bilder:', error);
 					// Weitere Fehlerbehandlung hier einfügen, falls benötigt
+				}
+			}
+
+			function onFolderMouseDown(e){
+				var d = new Date();
+				select_image_timer = d.getTime(); // Milliseconds since 1 Apr 1970
+			}
+
+			function onImageMouseDown(e){
+				var d = new Date();
+				select_image_timer = d.getTime(); // Milliseconds since 1 Apr 1970
+			}
+
+			function onFolderMouseUp(e){
+				var d = new Date();
+				var long_click = (d.getTime() - select_image_timer) > 1000;
+				if (long_click || enabled_selection_mode){
+					e.preventDefault();
+					// Click lasted longer than 1s (1000ms)
+					var container = e.target.closest('.thumbnail, .thumbnail_folder');
+					var checkmark = container.querySelector('.checkmark');
+					var item = decodeURIComponent($(container.querySelector('img')).parent().parent().data("href"));
+
+					item = decodeURIComponent(item.replace(/.*preview=/, ""));
+
+					if (selectedFolders.includes(item)) {
+						// Deselect item
+						selectedFolders = selectedFolders.filter(i => i !== item);
+						checkmark.style.display = 'none';
+					} else {
+						// Select item
+						log(item);
+						selectedFolders.push(item);
+						checkmark.style.display = 'block';
+					}
+
+					updateDownloadButton();
+					updateUnselectButton();
+					enabled_selection_mode = true;
+				} else {
+					var _onclick = $(e.currentTarget).parent().data("onclick");
+					log(_onclick)
+					eval(_onclick);
+				}
+				select_image_timer = 0;
+			}
+
+			function onImageMouseUp(e){
+				var d = new Date();
+				var long_click = (d.getTime() - select_image_timer) > 1000;
+				if (long_click || enabled_selection_mode){
+					e.preventDefault();
+					// Click lasted longer than 1s (1000ms)
+					var container = e.target.closest('.thumbnail, .thumbnail_folder');
+					var checkmark = container.querySelector('.checkmark');
+					var item = container.querySelector('img').getAttribute('src');
+
+					item = decodeURIComponent(item.replace(/.*preview=/, ""));
+
+					if (selectedImages.includes(item)) {
+						// Deselect item
+						selectedImages = selectedImages.filter(i => i !== item);
+						checkmark.style.display = 'none';
+					} else {
+						// Select item
+						selectedImages.push(item);
+						checkmark.style.display = 'block';
+					}
+
+					updateDownloadButton();
+					updateUnselectButton();
+					enabled_selection_mode = true;
+				} else {
+					var _onclick = $(e.currentTarget).data("onclick");
+					eval(_onclick);
+				}
+				select_image_timer = 0;
+			}
+
+
+			function updateUnselectButton() {
+				var unselectBtn = document.getElementById('unselectBtn');
+				if (selectedImages.length > 0 || selectedFolders.length > 0) {
+					unselectBtn.style.display = 'inline-block';
+				} else {
+					unselectBtn.style.display = 'none';
+				}
+			}
+
+
+			function updateDownloadButton() {
+				var downloadBtn = document.getElementById('downloadBtn');
+				if (selectedImages.length > 0 || selectedFolders.length > 0) {
+					downloadBtn.style.display = 'inline-block';
+				} else {
+					downloadBtn.style.display = 'none';
+				}
+			}
+
+			function unselectSelection() {
+				enabled_selection_mode = false;
+				selectedImages = [];
+				selectedFolders = [];
+
+				updateDownloadButton();
+				updateUnselectButton();
+
+				$(".checkmark").hide();
+			}
+
+			function downloadSelected() {
+				if (selectedImages.length > 0 || selectedFolders.length > 0) {
+					if (selectedImages.length > 1 || selectedFolders.length > 0) {
+						log("Should be downloaded as zip!");
+					}
+
+					if (selectedImages.length == 1 && selectedFolders.length == 0) {
+						selectedImages.forEach(item => {
+							var a = document.createElement('a');
+							a.href = item;
+							a.download = item.split('/').pop(); // Extract filename
+							document.body.appendChild(a);
+							a.click();
+							document.body.removeChild(a);
+						});
+					} else {
+						if(selectedImages.length || selectedFolders.length) {
+							var download_url_parts = [];
+
+							if(selectedFolders.length) {
+								download_url_parts.push("folder=" + selectedFolders.join("&folder="));
+							}
+
+							if(selectedImages.length) {
+								download_url_parts.push("img=" + selectedImages.join("&img="));
+							}
+
+							if(download_url_parts.length) {
+								var download_url = "index.php?zip=1&" + download_url_parts.join("&");
+								log(download_url);
+
+								var a = document.createElement('a');
+								a.href = download_url;
+								document.body.appendChild(a);
+								a.click();
+								document.body.removeChild(a);
+							} else {
+								log("No download-url-parts found");
+							}
+						} else {
+							log("selectedImages and selectedFolders were empty");
+						}
+					}
+				} else {
+					log("selectedImages and selectedFolders were empty (top)");
 				}
 			}
 
