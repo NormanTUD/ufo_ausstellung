@@ -2084,7 +2084,7 @@
 							var download_url_parts = [];
 
 							if(selectedFolders.length) {
-								download_url_parts.push("folder=" + selectedFolders.join("&folder="));
+								download_url_parts.push("folder=" + selectedFolders.join("&folder[]="));
 							}
 
 							if(selectedImages.length) {
