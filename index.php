@@ -1100,6 +1100,7 @@
 					showPageLoadingIndicator();
 
 					if (!/^\s*$/.test(searchTerm)) {
+						unselectSelection();
 						$("#delete_search").show();
 						$("#searchResults").show();
 						$("#gallery").hide();
@@ -1121,6 +1122,8 @@
 						$("#searchResults").hide();
 						$("#gallery").show();
 						await draw_map_from_current_images();
+
+						unselectSelection();
 					}
 				}
 
@@ -1130,6 +1133,7 @@
 
 			// Funktion zur Anzeige der Suchergebnisse
 			async function displaySearchResults(searchTerm, results) {
+				unselectSelection();
 				var $searchResults = $('#searchResults');
 				$searchResults.empty();
 
@@ -1185,6 +1189,7 @@
 				await draw_map_from_current_images();
 
 				add_listeners();
+				unselectSelection();
 			}
 
 			function toggleSwitch() {
@@ -1965,17 +1970,21 @@
 
 			function onFolderMouseDown(e){
 				var d = new Date();
-				select_image_timer = d.getTime(); // Milliseconds since 1 Apr 1970
+				select_folder_timer = d.getTime(); // Milliseconds since 1 Apr 1970
+
+				showPageLoadingIndicator();
 			}
 
 			function onImageMouseDown(e){
 				var d = new Date();
 				select_image_timer = d.getTime(); // Milliseconds since 1 Apr 1970
+
+				showPageLoadingIndicator();
 			}
 
 			function onFolderMouseUp(e){
 				var d = new Date();
-				var long_click = (d.getTime() - select_image_timer) > 1000;
+				var long_click = (d.getTime() - select_folder_timer) > 1000;
 				if (long_click || enabled_selection_mode){
 					e.preventDefault();
 					// Click lasted longer than 1s (1000ms)
@@ -2004,7 +2013,10 @@
 					log(_onclick)
 					eval(_onclick);
 				}
-				select_image_timer = 0;
+
+				select_folder_timer = 0;
+
+				hidePageLoadingIndicator();
 			}
 
 			function onImageMouseUp(e){
@@ -2036,7 +2048,10 @@
 					var _onclick = $(e.currentTarget).data("onclick");
 					eval(_onclick);
 				}
+
 				select_image_timer = 0;
+
+				hidePageLoadingIndicator();
 			}
 
 
