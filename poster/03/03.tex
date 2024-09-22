@@ -1,0 +1,78 @@
+\documentclass{scrartcl}
+
+% These are only some keywords for the autocompletion-feature of many editors: section, subsection, subsubsection, paragraph,
+% includegraphics, width, linewidth, linespread, figure, wrapfigure, caption, label, footnote, equation, input, cite, citetitle,
+% citeauthor, footfullcite, tableofcontents, printbibliography, clearpage, frq, frqq, flq, flqq, grq, grqq, glq, glqq, textit,
+% texttt, mathrm, dots, pmatrix, centering, phantom, minipage, ensuremath, hfill, vfill, 
+
+\newcommand{\centeredquote}[2]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{flushright}
+		\item\frqq\textsl{#1}\flqq\ 
+	\end{flushright}
+	\nopagebreak
+	\hfill ---\,\textsc{#2}\newline
+	\vspace{-1em}
+}
+
+\newcommand{\centeredquoteunknownsource}[1]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{quotation}
+		\begin{flushright}
+			\item\frqq\textsl{#1}\flqq\ 
+		\end{flushright}
+	\end{quotation}
+	\vspace{-1em}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{fourier}
+\usepackage{soulutf8}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ngerman]{babel}
+
+\usepackage{qrcode}
+
+\emergencystretch2em
+
+\newcommand{\qr}[1]{
+	\qquad \qrcode[height=0.4in]{#1}
+}
+
+\usepackage{geometry}
+\newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
+
+\begin{document}
+
+Die sogenannten \textit{Dragonfly-Drones}, die 2007 in Kalifornien aufgetaucht sein sollen, sind einer der interessantesten Hoaxes aus der UFO-Geschichte.
+
+Die ersten Berichte waren anonym im Internet und bei der Radiosendung \textit{Art Bell}. Angeblich haben mehrere Leute diese eigenartigen \frqq Drohnen\flqq\ gesehen und photographiert. Sie sollen sich erratisch bewegen und dabei \frqq knisternde\frqq\ Geräusche machen. Außerdem sollen sie sich unsichtbar machen können, und das auch ohne erkennbare Muster machen.
+
+Es wurden Fotos von mehreren Modellen in verschiedenen Umgebungen vorgelegt, bis es einige Zeit ruhig im diese Drohnen wurde.
+
+Nach einiger Zeit ohne neue Meldungen meldete sich ein \textit{Whistleblower}, der sich Isac nannte. Er meinte, er sei im \textit{CARET}-Programm gewesen, was für \textbf{C}ommercial \textbf{A}pplications \textbf{R}esearch for \textbf{E}xtraterrestrial \textbf{T}echnology stehen soll.
+
+Die Drohnentechnologie wurde angeblich bei einem UFO-Crash (angedeutet wird der \textit{Kecksburg UFO incident}, wobei das nie expliziert wird) reverse engineered. Diese Drohnen sollen eine eigene Sprache haben, mit der man, wenn die Bedingungen richtig sind (richtiges Material, richtige \frqq Worte\flqq\ usw.) Materie kontrollieren können soll. 
+
+Auf allen Bildern sieht man eigenartige Schriftzeichen, die aussehen wie Japanisch, aber nicht japanisch sind. Angeblich ist diese Sprache extrem kontextsensitiv, so dass das gleiche Zeichen in einem \frqq Satz\flqq\ einmal sowas Triviales wie ein boole'scher \texttt{True}-\texttt{False}-Wert sein kann, aber in einem anderem Kontext das gesamte Genom des Menschen beinhalten kann.
+
+Durch die richtige Weise der Kombination dieser Zeichen soll es möglich sein, Materie zu kontrollieren, wie eine Programmiersprache für die Welt.
+
+Isac hat hunderte Seiten angebliche interne Memos des Projektes geleakt, die die Sprache sehr kunstvoll zeigen und in Szene setzen.
+
+Es hat sich nie einer zu diesem Hoax bekannt, aber höchstwahrscheinlich war es eine Werbeaktion für den Film \textit{Terminator: The Sarah Connor Chronicles}. In diesem Film, der zur selben Zeit entstanden ist, sind sehr ähnliche Drohnen zu sehen. Höchstwahrscheinlich war es ein Versuch, ein immersives Marketing-ARG zu erstellen, wie es z.\,B. Lost auch vorher gemacht hat. Gescheitert ist dieser Plan vermutlich am Streik der amerikanischen Film- und Serienautoren zur selben Zeit.
+
+\qr{https://www.youtube.com/watch?v=k-bEJ2R0dlM}
+
+\qr{https://en.wikipedia.org/wiki/Kecksburg_UFO_incident}
+
+\qr{https://screenrant.com/sarah-connor-chronicles-california-drones-mystery/}
+
+\qr{https://en.wikipedia.org/wiki/2007\%E2\%80\%9308_Writers_Guild_of_America_strike}
+
+\end{document}
