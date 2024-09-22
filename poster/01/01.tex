@@ -1,0 +1,54 @@
+\documentclass{scrartcl}
+
+% These are only some keywords for the autocompletion-feature of many editors: section, subsection, subsubsection, paragraph,
+% includegraphics, width, linewidth, linespread, figure, wrapfigure, caption, label, footnote, equation, input, cite, citetitle,
+% citeauthor, footfullcite, tableofcontents, printbibliography, clearpage, frq, frqq, flq, flqq, grq, grqq, glq, glqq, textit,
+% texttt, mathrm, dots, pmatrix, centering, phantom, minipage, ensuremath, hfill, vfill, 
+
+\newcommand{\centeredquote}[2]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{flushright}
+		\item\frqq\textsl{#1}\flqq\ 
+	\end{flushright}
+	\nopagebreak
+	\hfill ---\,\textsc{#2}\newline
+	\vspace{-1em}
+}
+
+\newcommand{\centeredquoteunknownsource}[1]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{quotation}
+		\begin{flushright}
+			\item\frqq\textsl{#1}\flqq\ 
+		\end{flushright}
+	\end{quotation}
+	\vspace{-1em}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{fourier}
+\usepackage{soulutf8}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ngerman]{babel}
+
+\usepackage{qrcode}
+
+\emergencystretch2em
+
+
+\begin{document}
+
+\textit{Von oben nach unten und links nach rechts}:
+
+\begin{itemize}
+	\item Das große Bild mit dem abgestürzten UFO und dem Außerirdischem unten Rechts stammt vom Youtube-Kanal von Ivan0135, von dem auch \textit{Skinny Bob} kommt. Diese Videos wurden intensiv analysiert, und es gibt ein paar Indizien dafür, dass sie Fake sind, z.\,B. wurden in einem der Skinny-Bob-Videos Schriftarten genutzt, die nicht existiert haben zur Zeit, wo es angeblich aufgenommen worden ist, und das Video wurde künstlich gealtert. 
+		\qrcode[height=1in]{https://www.youtube.com/@ivan0135/}
+		\qrcode[height=1in]{https://skinnybob.info/}
+\end{itemize}
+
+\end{document}
