@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.4.27)  22 SEP 2024 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.4.27)  22 SEP 2024 12:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -554,6 +554,18 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 
 <Reading QR code for "https://obscurban-legend.fandom.com/wiki/4chan_Grey_Alien
 " at level 4-M from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Solway_Firth_Spaceman" at l
+evel 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Atacama-Skelett" at level 4
+-Q from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Alyoshenka" at level 3-M fr
+om aux file.>
+
+<Reading QR code for "https://www.unheimlichpodcast.de/mystery-podcast-ep04-das
+-baby-alyoshenka" at level 5-M from aux file.>
 )
 \openout1 = `01.aux'.
 
@@ -714,6 +726,39 @@ en" in version 0-M.>
 
 <Copying the QR code for "https://obscurban-legend.fandom.com/wiki/4chan_Grey_A
 lien" in version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://en.wikipedia.org/wiki/Solway_Firth_Spaceman" in
+ version 0-M.>
+
+<Copying the QR code for "https://en.wikipedia.org/wiki/Solway_Firth_Spaceman" 
+in version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Atacama-Skelett" in versi
+on 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Atacama-Skelett" in ver
+sion 4-Q as previously calculated.>
+
+
+
+<QR code requested for "https://en.wikipedia.org/wiki/Alyoshenka" in version 0-
+M.>
+
+<Copying the QR code for "https://en.wikipedia.org/wiki/Alyoshenka" in version 
+3-M as previously calculated.>
+
+
+
+<QR code requested for "https://www.unheimlichpodcast.de/mystery-podcast-ep04-d
+as-baby-alyoshenka" in version 0-M.>
+
+<Copying the QR code for "https://www.unheimlichpodcast.de/mystery-podcast-ep04
+-das-baby-alyoshenka" in version 5-M as previously calculated.>
 [1
 
 
@@ -724,19 +769,31 @@ lien" in version 4-M as previously calculated.>
 
 <Reading QR code for "https://obscurban-legend.fandom.com/wiki/4chan_Grey_Alien
 " at level 4-M from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Solway_Firth_Spaceman" at l
+evel 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Atacama-Skelett" at level 4
+-Q from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Alyoshenka" at level 3-M fr
+om aux file.>
+
+<Reading QR code for "https://www.unheimlichpodcast.de/mystery-podcast-ep04-das
+-baby-alyoshenka" at level 5-M from aux file.>
 ) ) 
 Here is how much of TeX's memory you used:
- 10251 strings out of 476091
- 180574 string characters out of 5794081
- 1942330 words of memory out of 5000000
- 30504 multiletter control sequences out of 15000+600000
+ 10261 strings out of 476091
+ 181174 string characters out of 5794081
+ 2102330 words of memory out of 5000000
+ 30514 multiletter control sequences out of 15000+600000
  543228 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,7n,106p,10597b,285s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,7n,106p,10597b,289s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on 01.pdf (1 page, 39047 bytes).
+Output written on 01.pdf (1 page, 57000 bytes).
 PDF statistics:
  19 PDF objects out of 1000 (max. 8388607)
  11 compressed objects within 1 object stream
