@@ -1,0 +1,60 @@
+\documentclass{scrartcl}
+
+% These are only some keywords for the autocompletion-feature of many editors: section, subsection, subsubsection, paragraph,
+% includegraphics, width, linewidth, linespread, figure, wrapfigure, caption, label, footnote, equation, input, cite, citetitle,
+% citeauthor, footfullcite, tableofcontents, printbibliography, clearpage, frq, frqq, flq, flqq, grq, grqq, glq, glqq, textit,
+% texttt, mathrm, dots, pmatrix, centering, phantom, minipage, ensuremath, hfill, vfill, 
+
+\newcommand{\centeredquote}[2]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{flushright}
+		\item\frqq\textsl{#1}\flqq\ 
+	\end{flushright}
+	\nopagebreak
+	\hfill ---\,\textsc{#2}\newline
+	\vspace{-1em}
+}
+
+\newcommand{\centeredquoteunknownsource}[1]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{quotation}
+		\begin{flushright}
+			\item\frqq\textsl{#1}\flqq\ 
+		\end{flushright}
+	\end{quotation}
+	\vspace{-1em}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{fourier}
+\usepackage{soulutf8}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ngerman]{babel}
+
+\usepackage{qrcode}
+
+\emergencystretch2em
+
+\newcommand{\qr}[1]{
+	\qquad \qrcode[height=0.4in]{#1}
+}
+
+\usepackage{geometry}
+\newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
+
+\begin{document}
+
+\textit{Von oben nach unten und links nach rechts}:
+
+\begin{itemize}
+	\item Die oberste Reihe sind \frq Plasmoide Anomalien\flq, wie die UFO-Szene sie nennt. Einige versuchen, mit ihnen in Kontakt zu treten. Einige in der UFO-Szene haben gemerkt, dass es oft Zahlen sind, und auch, dass es öfter als man es erwarten würde, Primzahlen. Das wird als Beweis gesehen, dass es intelligente Wesen sein müssen, die versuchen, über Primzahlen zu kommunizieren. In Wahrheit sind es Folienballons, wie man sie für Geburtstage aufhängt. Die Beobachtung mit den Primzahlen ist richtig, jedoch ist der Grund ein Anderer:
+
+		Die Ballons vereinzeln sich fast immer. Dadurch hat man nur noch die Ziffern von 0 bis 9. Die Wahrscheinlichkeit, eine Primzahl zu \frq erwischen\flq, wird immer geringer, je größer die Zahlen sind. Jedoch, unter den ersten 10 Zahlen (0-9) sind 4 Primzahlen: 2, 3, 5, 7. Die Chance, wenn man eine Zahl zwischen 0 und 9 auswählt, dass sie prim ist, ist also bei 40\%: viel größer, als man es normalerweise erwarten würde.
+\end{itemize}
+
+\end{document}
