@@ -1,0 +1,65 @@
+\documentclass{scrartcl}
+
+% These are only some keywords for the autocompletion-feature of many editors: section, subsection, subsubsection, paragraph,
+% includegraphics, width, linewidth, linespread, figure, wrapfigure, caption, label, footnote, equation, input, cite, citetitle,
+% citeauthor, footfullcite, tableofcontents, printbibliography, clearpage, frq, frqq, flq, flqq, grq, grqq, glq, glqq, textit,
+% texttt, mathrm, dots, pmatrix, centering, phantom, minipage, ensuremath, hfill, vfill, 
+
+\newcommand{\centeredquote}[2]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{flushright}
+		\item\frqq\textsl{#1}\flqq\ 
+	\end{flushright}
+	\nopagebreak
+	\hfill ---\,\textsc{#2}\newline
+	\vspace{-1em}
+}
+
+\newcommand{\centeredquoteunknownsource}[1]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{quotation}
+		\begin{flushright}
+			\item\frqq\textsl{#1}\flqq\ 
+		\end{flushright}
+	\end{quotation}
+	\vspace{-1em}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{fourier}
+\usepackage{soulutf8}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ngerman]{babel}
+
+\usepackage{qrcode}
+
+\emergencystretch2em
+
+\newcommand{\qr}[1]{
+	\qquad \qrcode[height=0.4in]{#1}
+}
+
+\usepackage{geometry}
+\newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
+
+\begin{document}
+
+\textit{Von oben nach unten und links nach rechts}:
+
+\begin{itemize}
+	\item Die obersten 3 Bilder wurden angeblich von Eric Thomason 1993 in Maslin Beach, Adelaide, Australien gemacht. Dieses UFO soll aus dem Ozean aufgetaucht und weggeflogen sein. Die Bilder sendete er an eine schwedische UFO-Zeitschrift. In den hochauflösenden Bildern sieht man Angelschnur, die die Modelle hochhält.
+		\qr{https://www.ufocasebook.com/2012/mbphotos.html}
+	\item Links ein Bild eines Video aus einer unbekannten Quelle. Es soll den Absturz eines UFOs in New Mexiko zeigen.
+	\item Rechts daneben ein Bild, das Howard Menger, ein amerikanischer Kontaktler, angeblich von den Venusianern gemacht hat, die er getroffen haben will.
+	\item Darunter links: das Cecconi-UFO, das 1979 in Italien aufgenommen worden sein soll. Höchstwahrscheinlich war es ein Solarballon.
+		\qr{https://de.wikipedia.org/wiki/Solarballon}
+		\qr{https://www.theblackvault.com/casefiles/the-ufo-case-of-maresciallo-cecconi-june-18-1979/}
+	\item Daneben zwei UFOs, das der Kontaktler Adamski angeblich gesehen hat.
+\end{itemize}
+
+\end{document}
