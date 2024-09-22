@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.4.27)  22 SEP 2024 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.4.27)  22 SEP 2024 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -547,7 +547,49 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box55
 )
-(./04.aux)
+(./04.aux
+<Reading QR code for "https://de.wikipedia.org/wiki/Betty_und_Barney_Hill" at l
+evel 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Burkhard_Heim" at level 4-Q
+ from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/George_Adamski" at level 4-
+Q from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Illobrand_von_Ludwiger" at 
+level 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Eduard_Albert_Meier" at lev
+el 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Heaven%E2%80%99s_Gate_(Neue
+_Religi%C3%B6se_Bewegung)" at level 5-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Erich_von_D%C3%A4niken" at 
+level 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Kenneth_Arnold" at level 4-
+Q from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Raelismus" at level 3-M fro
+m aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Lonnie_Zamora_incident" at 
+level 4-M from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/J._Allen_Hynek" at level 4-
+Q from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Luis_Elizondo" at level 4-Q
+ from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Hans-Werner_Peiniger" at le
+vel 4-M from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/David_Grusch_UFO_whistleblo
+wer_claims" at level 5-M from aux file.>
+)
 \openout1 = `04.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -650,23 +692,216 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line
 55.
 (/usr/share/texlive/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
-) [1
+)
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./04.aux) ) 
+<QR code requested for "https://de.wikipedia.org/wiki/Betty_und_Barney_Hill" in
+ version 0-M.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Betty_und_Barney_Hill" 
+in version 4-M as previously calculated.>
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line
+ 56.
+(/usr/share/texlive/texmf-dist/tex/latex/fourier/fmlfutmi.fd
+File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
+)
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 56.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 56.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 56.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
+56.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+)
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 56.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 7.63599pt on input line 56.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 56.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 56.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.64865pt on input line 56.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 56.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 56.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.64865pt on input line 56.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 56.
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Burkhard_Heim" in version
+ 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Burkhard_Heim" in versi
+on 4-Q as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/George_Adamski" in versio
+n 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/George_Adamski" in vers
+ion 4-Q as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Illobrand_von_Ludwiger" i
+n version 0-M.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Illobrand_von_Ludwiger"
+ in version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Eduard_Albert_Meier" in v
+ersion 0-M.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Eduard_Albert_Meier" in
+ version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Heaven%E2%80%99s_Gate_(Ne
+ue_Religi%C3%B6se_Bewegung)" in version 0-M.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Heaven%E2%80%99s_Gate_(
+Neue_Religi%C3%B6se_Bewegung)" in version 5-M as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Erich_von_D%C3%A4niken" i
+n version 0-M.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Erich_von_D%C3%A4niken"
+ in version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Kenneth_Arnold" in versio
+n 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Kenneth_Arnold" in vers
+ion 4-Q as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Raelismus" in version 0-M
+.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Raelismus" in version 3
+-M as previously calculated.>
+
+
+
+<QR code requested for "https://en.wikipedia.org/wiki/Lonnie_Zamora_incident" i
+n version 0-M.>
+
+<Copying the QR code for "https://en.wikipedia.org/wiki/Lonnie_Zamora_incident"
+ in version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://en.wikipedia.org/wiki/J._Allen_Hynek" in versio
+n 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+
+<Copying the QR code for "https://en.wikipedia.org/wiki/J._Allen_Hynek" in vers
+ion 4-Q as previously calculated.>
+
+
+
+<QR code requested for "https://en.wikipedia.org/wiki/Luis_Elizondo" in version
+ 0-M.>
+<Error-correction level increased from M to Q at no cost.>
+
+<Copying the QR code for "https://en.wikipedia.org/wiki/Luis_Elizondo" in versi
+on 4-Q as previously calculated.>
+
+
+
+<QR code requested for "https://de.wikipedia.org/wiki/Hans-Werner_Peiniger" in 
+version 0-M.>
+
+<Copying the QR code for "https://de.wikipedia.org/wiki/Hans-Werner_Peiniger" i
+n version 4-M as previously calculated.>
+
+
+
+<QR code requested for "https://en.wikipedia.org/wiki/David_Grusch_UFO_whistleb
+lower_claims" in version 0-M.>
+
+<Copying the QR code for "https://en.wikipedia.org/wiki/David_Grusch_UFO_whistl
+eblower_claims" in version 5-M as previously calculated.>
+[1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./04.aux
+<Reading QR code for "https://de.wikipedia.org/wiki/Betty_und_Barney_Hill" at l
+evel 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Burkhard_Heim" at level 4-Q
+ from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/George_Adamski" at level 4-
+Q from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Illobrand_von_Ludwiger" at 
+level 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Eduard_Albert_Meier" at lev
+el 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Heaven%E2%80%99s_Gate_(Neue
+_Religi%C3%B6se_Bewegung)" at level 5-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Erich_von_D%C3%A4niken" at 
+level 4-M from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Kenneth_Arnold" at level 4-
+Q from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Raelismus" at level 3-M fro
+m aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Lonnie_Zamora_incident" at 
+level 4-M from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/J._Allen_Hynek" at level 4-
+Q from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/Luis_Elizondo" at level 4-Q
+ from aux file.>
+
+<Reading QR code for "https://de.wikipedia.org/wiki/Hans-Werner_Peiniger" at le
+vel 4-M from aux file.>
+
+<Reading QR code for "https://en.wikipedia.org/wiki/David_Grusch_UFO_whistleblo
+wer_claims" at level 5-M from aux file.>
+) ) 
 Here is how much of TeX's memory you used:
- 10184 strings out of 476091
- 179228 string characters out of 5794081
- 1854330 words of memory out of 5000000
- 30451 multiletter control sequences out of 15000+600000
- 523315 words of font info for 43 fonts, out of 8000000 for 9000
+ 10273 strings out of 476091
+ 182232 string characters out of 5794081
+ 2396330 words of memory out of 5000000
+ 30526 multiletter control sequences out of 15000+600000
+ 543228 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,7n,106p,10597b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/share/te
-xlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fon
-ts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ado
-be/utopia/putri8a.pfb>
-Output written on 04.pdf (1 page, 30852 bytes).
+ 108i,7n,106p,10597b,283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on 04.pdf (1 page, 61799 bytes).
 PDF statistics:
  19 PDF objects out of 1000 (max. 8388607)
  11 compressed objects within 1 object stream
