@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.4.27)  22 SEP 2024 12:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.4.27)  22 SEP 2024 12:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -566,6 +566,12 @@ om aux file.>
 
 <Reading QR code for "https://www.unheimlichpodcast.de/mystery-podcast-ep04-das
 -baby-alyoshenka" at level 5-M from aux file.>
+
+<Reading QR code for "https://www.youtube.com/user/retiredafb" at level 3-M fro
+m aux file.>
+
+<Reading QR code for "https://extraterrestrials.fandom.com/wiki/Reed_Case" at l
+evel 4-M from aux file.>
 )
 \openout1 = `01.aux'.
 
@@ -759,6 +765,22 @@ as-baby-alyoshenka" in version 0-M.>
 
 <Copying the QR code for "https://www.unheimlichpodcast.de/mystery-podcast-ep04
 -das-baby-alyoshenka" in version 5-M as previously calculated.>
+
+
+
+<QR code requested for "https://www.youtube.com/user/retiredafb" in version 0-M
+.>
+
+<Copying the QR code for "https://www.youtube.com/user/retiredafb" in version 3
+-M as previously calculated.>
+
+
+
+<QR code requested for "https://extraterrestrials.fandom.com/wiki/Reed_Case" in
+ version 0-M.>
+
+<Copying the QR code for "https://extraterrestrials.fandom.com/wiki/Reed_Case" 
+in version 4-M as previously calculated.>
 [1
 
 
@@ -781,19 +803,25 @@ om aux file.>
 
 <Reading QR code for "https://www.unheimlichpodcast.de/mystery-podcast-ep04-das
 -baby-alyoshenka" at level 5-M from aux file.>
+
+<Reading QR code for "https://www.youtube.com/user/retiredafb" at level 3-M fro
+m aux file.>
+
+<Reading QR code for "https://extraterrestrials.fandom.com/wiki/Reed_Case" at l
+evel 4-M from aux file.>
 ) ) 
 Here is how much of TeX's memory you used:
- 10261 strings out of 476091
- 181174 string characters out of 5794081
- 2102330 words of memory out of 5000000
- 30514 multiletter control sequences out of 15000+600000
+ 10265 strings out of 476091
+ 181438 string characters out of 5794081
+ 2172330 words of memory out of 5000000
+ 30518 multiletter control sequences out of 15000+600000
  543228 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,7n,106p,10597b,289s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on 01.pdf (1 page, 57000 bytes).
+Output written on 01.pdf (1 page, 63038 bytes).
 PDF statistics:
  19 PDF objects out of 1000 (max. 8388607)
  11 compressed objects within 1 object stream
