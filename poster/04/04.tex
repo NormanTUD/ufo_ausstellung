@@ -1,0 +1,71 @@
+\documentclass{scrartcl}
+
+% These are only some keywords for the autocompletion-feature of many editors: section, subsection, subsubsection, paragraph,
+% includegraphics, width, linewidth, linespread, figure, wrapfigure, caption, label, footnote, equation, input, cite, citetitle,
+% citeauthor, footfullcite, tableofcontents, printbibliography, clearpage, frq, frqq, flq, flqq, grq, grqq, glq, glqq, textit,
+% texttt, mathrm, dots, pmatrix, centering, phantom, minipage, ensuremath, hfill, vfill, 
+
+\newcommand{\centeredquote}[2]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{flushright}
+		\item\frqq\textsl{#1}\flqq\ 
+	\end{flushright}
+	\nopagebreak
+	\hfill ---\,\textsc{#2}\newline
+	\vspace{-1em}
+}
+
+\newcommand{\centeredquoteunknownsource}[1]{
+	\hbadness=5000
+	\vspace{-1em}
+	\begin{quotation}
+		\begin{flushright}
+			\item\frqq\textsl{#1}\flqq\ 
+		\end{flushright}
+	\end{quotation}
+	\vspace{-1em}
+}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+\usepackage{fourier}
+\usepackage{soulutf8}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ngerman]{babel}
+
+\usepackage{qrcode}
+
+\emergencystretch2em
+
+\newcommand{\qr}[1]{
+	\qquad \qrcode[height=0.4in]{#1}
+}
+
+\usepackage{geometry}
+\newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
+
+\begin{document}
+
+\textit{Von oben nach unten und links nach rechts}:
+
+\begin{itemize}
+	\item Betty und Barney Hill:
+	\item Burkhard Heim:
+	\item George Adamski:
+	\item Illobrand von Ludwiger:
+	\item Billy Meier:
+	\item Marshall Applewhite:
+	\item Erich von Däniken:
+	\item Kenneth Arnold:
+	\item Claude Vorhillon:
+	\item Lonnie Zamorra:
+	\item Allen Hynek:
+	\item Loiz Elizondo:
+	\item Hans-Werner Peiniger:
+	\item David Grusch:
+\end{itemize}
+
+\end{document}
