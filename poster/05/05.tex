@@ -60,7 +60,7 @@
             }
         },
         columns={x, isprime, primecount}
-    ]{1000}\loadedtablethousand
+    ]{2000}\loadedtablelarge
 
     \begin{figure}[h]
         \centering
@@ -82,14 +82,14 @@
         \begin{minipage}[b]{0.45\linewidth}
             \begin{tikzpicture}
                 \begin{axis}[
-                    title={Primzahlzählfunktion von 0 bis 1000: $\pi(x)$},
+                    title={Primzahlzählfunktion von 0 bis 2000: $\pi(x)$},
                     xlabel=$x$,
                     ylabel=$\pi(x)$,
                     ymajorgrids=true,
                     grid style=dashed,
                     every axis plot/.append style={mark=*}
                 ]
-                \addplot[only marks, color=red] table [x=x, y=primecount] {\loadedtablethousand};
+                \addplot[only marks, color=red] table [x=x, y=primecount] {\loadedtablelarge};
                 \end{axis}
             \end{tikzpicture}
         \end{minipage}
