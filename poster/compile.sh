@@ -85,7 +85,7 @@ compile_latex() {
 					convert "../$dir.png" -fuzz 10% -trim +repage "../$dir.png"
 				fi
 
-				if [[ -e $dir.png ]]; then
+				if [[ -e "../$dir.png" ]]; then
 					convert "../$dir.png" -background white -alpha remove -alpha off "../$dir.png"
 				fi
 			else
