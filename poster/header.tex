@@ -41,7 +41,7 @@
 \newcommand{\qr}[2][]{%
     \noindent % Verhindert Einrückung der Zeile
     \fboxsep=10pt % Abstand zwischen Inhalt und Rahmen
-    \fbox{% Umrahmter Bereich mit "padding"
+    \colorbox{white}{% Weißer Rahmen um den QR-Code
         \mbox{\qrcode[height=0.6in]{#2}}%
     }%
     \ifthenelse{\equal{#1}{}}{}{\textit{\quad #1}} % Optionaler Text kursiv unter dem QR-Code
