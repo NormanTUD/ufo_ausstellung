@@ -64,13 +64,18 @@ compile_latex() {
 			# Combine PNGs into a single PNG file
 			convert $(ls page-*.png | tr '\n' ' ') -gravity center -append $dir.png
 
-			echo -e "${GREEN}Cleaning up temporary files...${NC}"
+			echo -e "${YELLOW}Cleaning up temporary files...${NC}"
 
 			if ls page-*.png 2>/dev/null >/dev/null; then
-				echo -e "${GREEN}Deleting page files...${NC}"
+				echo -e "${YELLOW}Deleting page files...${NC}"
 				rm page-*.png
 			else
 				echo -e "${RED}No page-*.png files found...${NC}"
+			fi
+
+			if [[ -e $dir.png ]]; then
+				echo -e "${YELLOW}Cropping png...${NC}"
+				convert $dir.png -fuzz 10% -trim +repage $dir.png
 			fi
 		else
 			echo -e "${RED}No PNG files created for $dir.pdf${NC}"
