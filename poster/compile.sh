@@ -151,5 +151,5 @@ for dir in "${directories[@]}"; do
 		compile_latex "$dir"
 	fi
 
-	rm */*.auxlock
+	rm */*.auxlock 2>/dev/null >/dev/null || true
 done
