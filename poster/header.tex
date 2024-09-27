@@ -40,7 +40,11 @@
 
 \newcommand{\qr}[2][]{%
     \noindent % Verhindert Einrückung der Zeile
-    \mbox{\qrcode[height=0.6in]{#2}\ifthenelse{\equal{#1}{}}{}{\textit{#1\quad}}} % Optionalen Text kursiv unter dem QR-Code
+    \fboxsep=10pt % Abstand zwischen Inhalt und Rahmen
+    \fbox{% Umrahmter Bereich mit "padding"
+        \mbox{\qrcode[height=0.6in]{#2}}%
+    }%
+    \ifthenelse{\equal{#1}{}}{}{\textit{\quad #1}} % Optionaler Text kursiv unter dem QR-Code
 }
 
 \newgeometry{
@@ -52,7 +56,7 @@
     paperheight=29.7cm % Höhe der Seite (A4)
 }
 
-\newcommand{\wikipedia}{ \raisebox{-2.25ex}{\includegraphics[height=5ex]{../wiki.png}}}
-\newcommand{\youtube}{ \raisebox{-2.25ex}{\includegraphics[height=5ex]{../youtube.png}}}
-\newcommand{\hoaxilla}{ \raisebox{-2.25ex}{\includegraphics[height=5ex]{../hoaxilla.png}}}
-\newcommand{\skeptoid}{ \raisebox{-2.25ex}{\includegraphics[height=5ex]{../skeptoid.png}}}
+\newcommand{\wikipedia}{\raisebox{-2.25ex}{\includegraphics[height=5ex]{../wiki.png}}}
+\newcommand{\youtube}{\raisebox{-2.25ex}{\includegraphics[height=5ex]{../youtube.png}}}
+\newcommand{\hoaxilla}{\raisebox{-2.25ex}{\includegraphics[height=5ex]{../hoaxilla.png}}}
+\newcommand{\skeptoid}{\raisebox{-2.25ex}{\includegraphics[height=5ex]{../skeptoid.png}}}
