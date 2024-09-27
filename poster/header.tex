@@ -35,9 +35,12 @@
 
 \emergencystretch2em
 
-\newcommand{\qr}[1]{
-	\qquad \qrcode[height=0.6in]{#1}
-}
+\newcommand{\qr}[2][]{%
+	\begin{center}
+		\qrcode[height=0.6in]{#2}\\
+		\ifthenelse{\equal{#1}{}}{}{#1}
+	\end{center}
+	}
 
 \usepackage{geometry}
 \newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
