@@ -8,29 +8,16 @@
 \input{../header.tex}
 
 \newcommand{\plotPrimeCount}[1]{%
-    \typeout{Versuche, die Datei 'prime_counts.csv' zu laden...} % Debug-Meldung
-    \pgfplotstablenew[
-        col sep=comma,
-        x=x,
-        y=pi % Der Spaltenname 'pi' muss genau so stimmen
-    ]{prime_counts.csv}\loadedtable
-    \typeout{prime_counts.csv geladen}
-
-    % Debug-Meldung, um den Inhalt der geladenen Tabelle anzuzeigen
-    \pgfplotstabletypeset{\loadedtable} % Gibt die geladene Tabelle aus, was bei Problemen helfen kann.
-
-    % Überprüfe, ob die Tabelle erfolgreich geladen wurde
-    \ifnum\pgfplotstable@count=0
-        \typeout{Warnung: Die Tabelle ist leer!}
-    \else
-        \typeout{Die Tabelle wurde erfolgreich geladen.} % Debug-Meldung für Erfolg
-    \fi
+    \typeout{Versuche, die Datei 'prime_counts_#1.csv' zu laden...} % Debug-Meldung
+    % Lade die CSV-Daten
+    \pgfplotstableread[col sep=comma]{prime_counts_#1.csv}\loadedtable
+    \typeout{prime_counts_#1.csv geladen} % Debug-Meldung
 
     \begin{figure}[h]
         \centering
         \begin{tikzpicture}
             \begin{axis}[
-                title={Primzahlzählfunktion von 0 bis #1: $\pi(x)$},
+                title={Primzahlzählfunktion von 1 bis #1: $\pi(x)$},
                 xlabel=$x$,
                 ylabel=$\pi(x)$,
                 ymajorgrids=true,
@@ -38,14 +25,13 @@
                 every axis plot/.append style={mark=*},
                 domain=0:#1,
                 samples=100,
-                restrict y to domain=0:1000 % Passen Sie dies an, um den Y-Bereich zu beschränken
             ]
-            \addplot[only marks, color=blue] table [x=x, y=pi] {\loadedtable}; % Stelle sicher, dass hier y=pi ist
+                % Plot der Daten aus der CSV-Datei
+                \addplot[only marks, color=blue] table [x=x, y=pi] {\loadedtable};
             \end{axis}
         \end{tikzpicture}
     \end{figure}
 }
-
 
 \begin{document}
 
@@ -63,7 +49,7 @@
     \]
 
     \plotPrimeCount{10}
-% \plotPrimeCount{1000}
+    \plotPrimeCount{50000}
 
     Es ist ersichtlich, dass es immer weniger Primzahlen werden, d.\,h. die Dichte der Primzahlen nimmt ab. Bei einer zufällig gewählten Zahl ist die Wahrscheinlichkeit, dass sie prim ist, generell verschwindend gering. Aber unter den ersten 10 Ziffern (0 bis 9, also genau die Zahlen, die vereinzelte Ballons \frq anzeigen\flq\ können), sind bereits 4 Primzahlen (2, 3, 5, 7), d.\,h. es besteht eine Chance von 40\,\%, dass eine in diesem Range gewählte Zahl prim ist. Viel höher als sonst.
 
