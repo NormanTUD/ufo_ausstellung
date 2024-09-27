@@ -40,7 +40,7 @@
 
 \newcommand{\qr}[2][]{%
     \noindent % Verhindert Einrückung der Zeile
-    \mbox{\qrcode[height=0.6in]{#2}\ifthenelse{\equal{#1}{}}{}{\textit{(#1)\quad}}} % Optionalen Text kursiv unter dem QR-Code
+    \mbox{\qrcode[height=0.6in]{#2}\ifthenelse{\equal{#1}{}}{}{\textit{#1\quad}}} % Optionalen Text kursiv unter dem QR-Code
 }
 
 \newgeometry{
