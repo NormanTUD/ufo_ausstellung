@@ -40,11 +40,7 @@ compile_latex() {
 		hash_string_hash=$(echo -n "$hash_string" | md5sum | awk '{print $1}')
 
 		echo -e "${YELLOW}Generated hash for $dir.tex:${NC} $hash_string_hash"
-		#echo -e "${YELLOW}Components of the hash:${NC}"
-		#echo "$hash_string" | while read -r line; do
-		#	echo "  - $line"
-		#done
-
+		
 		# Check if the hash exists in the cache
 		cached_hash=$(grep "^$dir.tex" "$HASH_CACHE_FILE" | cut -d':' -f2)
 
@@ -58,8 +54,9 @@ compile_latex() {
 			echo -e "${YELLOW}Changes detected. Running pdflatex...${NC}"
 			pdflatex "$dir.tex" && pdflatex "$dir.tex"
 
-			# Cache the new hash
-			sed -i "/^$dir\/$dir\.tex/d" "$HASH_CACHE_FILE" || true
+			# Update the hash in the cache
+			echo -e "${YELLOW}Updating hash cache for $dir.tex...${NC}"
+			sed -i.bak "/^$dir.tex/d" "$HASH_CACHE_FILE" || true
 			echo "$dir.tex:$hash_string_hash" >> "$HASH_CACHE_FILE"
 			echo -e "${GREEN}Updated hash cached for $dir.tex:${NC} $hash_string_hash"
 
@@ -115,8 +112,9 @@ compile_latex() {
 						convert "../$dir.png" -background white -alpha remove -alpha off "../$dir.png"
 					fi
 
-					# Cache the new PNG hash
-					sed -i "/^$dir.pdf/d" "$PNG_HASH_CACHE_FILE" || true
+					# Update the PNG hash in the cache
+					echo -e "${YELLOW}Updating PNG hash cache for $dir.pdf...${NC}"
+					sed -i.bak "/^$dir.pdf/d" "$PNG_HASH_CACHE_FILE" || true
 					echo "$dir.pdf:$pdf_hash" >> "$PNG_HASH_CACHE_FILE"
 					echo -e "${GREEN}Updated PNG hash cached for $dir.pdf:${NC} $pdf_hash"
 				else
@@ -155,4 +153,3 @@ for dir in "${directories[@]}"; do
 		fi
 	fi
 done
-
