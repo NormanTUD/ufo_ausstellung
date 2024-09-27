@@ -52,7 +52,7 @@ compile_latex() {
 
 		if [[ "$hash_string_hash" != "$cached_hash" ]]; then
 			echo -e "${YELLOW}Changes detected. Running pdflatex...${NC}"
-			pdflatex "$dir.tex" && pdflatex "$dir.tex"
+			pdflatex --enable-write18 --extra-mem-bot=10000000 --synctex=1 "$dir.tex"
 
 			# Update the hash in the cache
 			echo -e "${YELLOW}Updating hash cache for $dir.tex...${NC}"
