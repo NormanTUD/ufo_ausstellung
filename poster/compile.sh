@@ -149,9 +149,7 @@ touch "$PNG_HASH_CACHE_FILE"
 for dir in "${directories[@]}"; do
 	if [[ -d $dir ]]; then
 		compile_latex "$dir"
-	else
-		if [[ $dir != "--view" ]]; then
-			echo -e "${RED}$dir is not a directory${NC}"
-		fi
 	fi
+
+	rm */*.auxlock
 done
