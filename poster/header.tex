@@ -30,17 +30,16 @@
 \usepackage[ngerman]{babel}
 \usepackage{tikz}
 \usepackage{pgfplotstable}
+\usepackage{ifthen}
 
 \usepackage{qrcode}
 
 \emergencystretch2em
 
 \newcommand{\qr}[2][]{%
-	\begin{center}
-		\qrcode[height=0.6in]{#2}\\
-		\ifthenelse{\equal{#1}{}}{}{#1}
-	\end{center}
-	}
+    \noindent % Verhindert Einrückung der Zeile
+    \mbox{\qrcode[height=0.8in]{#2}\ifthenelse{\equal{#1}{}}{}{\textit{(#1)\quad}}} % Optionalen Text kursiv unter dem QR-Code
+}
 
 \usepackage{geometry}
 \newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
