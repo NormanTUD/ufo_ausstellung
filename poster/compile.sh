@@ -82,7 +82,7 @@ compile_latex() {
 
 				if [[ -e "../$dir.png" ]]; then
 					echo -e "${YELLOW}Cropping png...${NC}"
-					convert "$dir.png" -fuzz 10% -trim +repage "../$dir.png"
+					convert "../$dir.png" -fuzz 10% -trim +repage "../$dir.png"
 				fi
 
 				if [[ -e $dir.png ]]; then
