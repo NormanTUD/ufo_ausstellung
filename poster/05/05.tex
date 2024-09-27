@@ -8,11 +8,15 @@
 \input{../header.tex}
 
 \newcommand{\plotPrimeCount}[1]{%
+    \typeout{Versuche, die Datei 'prime_counts.csv' zu laden...} % Debug-Meldung
     \pgfplotstablenew[
         col sep=comma,
         x=x,
-        y=pix
+        y=pi
     ]{prime_counts.csv}\loadedtable
+
+    % Debug-Meldung, ob die Tabelle erfolgreich geladen wurde
+    \pgfplotstabletypeset{\loadedtable} % Gibt eine Fehlermeldung aus, wenn die Tabelle nicht geladen werden kann.
 
     \begin{figure}[h]
         \centering
@@ -28,7 +32,7 @@
                 samples=100,
                 restrict y to domain=0:1000 % Passen Sie dies an, um den Y-Bereich zu beschränken
             ]
-            \addplot[only marks, color=blue] table [x=x, y=pi(x)] {\loadedtable};
+            \addplot[only marks, color=blue] table [x=x, y=pi] {\loadedtable}; % Korrektur von y=pix zu y=pi
             \end{axis}
         \end{tikzpicture}
     \end{figure}
