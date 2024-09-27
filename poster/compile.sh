@@ -77,6 +77,10 @@ compile_latex() {
 				echo -e "${YELLOW}Cropping png...${NC}"
 				convert $dir.png -fuzz 10% -trim +repage $dir.png
 			fi
+
+			if [[ -e $dir.png ]]; then
+				convert $dir.png -background white -alpha remove -alpha off $dir.png
+			fi
 		else
 			echo -e "${RED}No PNG files created for $dir.pdf${NC}"
 		fi
