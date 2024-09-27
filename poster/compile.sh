@@ -106,7 +106,9 @@ touch "$HASH_CACHE_FILE"
 # Iterate over the provided arguments
 for arg in "$@"; do
 	if [[ -d $arg ]]; then
-		compile_latex "$arg"
+		if [[ "$arg" != "--view" ]]; then
+			compile_latex "$arg"
+		fi
 	else
 		echo -e "${RED}$arg is not a directory${NC}"
 	fi
