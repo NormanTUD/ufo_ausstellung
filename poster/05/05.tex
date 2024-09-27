@@ -12,15 +12,95 @@
 \textit{Von oben nach unten und links nach rechts}:
 
 \begin{itemize}
-	\item Die oberste Reihe sind \frq Plasmoide Anomalien\flq, wie die UFO-Szene sie nennt. Einige versuchen, mit ihnen in Kontakt zu treten. Einige in der UFO-Szene haben gemerkt, dass es oft Zahlen sind, und auch, dass es öfter als man es erwarten würde, Primzahlen. Das wird als Beweis gesehen, dass es intelligente Wesen sein müssen, die versuchen, über Primzahlen zu kommunizieren. In Wahrheit sind es Folienballons, wie man sie für Geburtstage aufhängt. Die Beobachtung mit den Primzahlen ist richtig, jedoch ist der Grund ein Anderer:
+    \item Die oberste Reihe sind \frq Plasmoide Anomalien\flq, wie die UFO-Szene sie nennt. Einige versuchen, mit ihnen in Kontakt zu treten. Einige in der UFO-Szene haben gemerkt, dass es oft Zahlen sind, und auch, dass es öfter als man es erwarten würde, Primzahlen. Das wird als Beweis gesehen, dass es intelligente Wesen sein müssen, die versuchen, über Primzahlen zu kommunizieren. In Wahrheit sind es Folienballons, wie man sie für Geburtstage aufhängt. Die Beobachtung mit den Primzahlen ist richtig, jedoch ist der Grund ein Anderer:
 
-		Die Ballons vereinzeln sich fast immer. Dadurch hat man nur noch die Ziffern von 0 bis 9. Die Wahrscheinlichkeit, eine Primzahl zu \frq erwischen\flq, wird immer geringer, je größer die Zahlen sind. Jedoch, unter den ersten 10 Zahlen (0-9) sind 4 Primzahlen: 2, 3, 5, 7. Die Chance, wenn man eine Zahl zwischen 0 und 9 auswählt, dass sie prim ist, ist also bei 40\%: viel größer, als man es normalerweise erwarten würde.
-	\item Darunter sind ein Re-Entry, ein Satellit, der in der Atmosphäre verglüht, und Starlink, das Satellitensystem von Musk.
-	\item Darunter ist ein UFO, das sich als hochgewehte Mülltüte darstellt.
-	\item Daneben ist ein Rauchring, wie er entstehen kann, wenn man große Trucks startet. \qr{https://www.youtube.com/watch?v=f1RmsJ1Rv9M}
-	\item Daneben sind zwei Bilder von Himmelslaternen, kleinen Kerzen in \frq Schläuchen\flq, die von der Hitze der Flamme emporgehoben wird, und dann zu fliegen beginnt.
-	\item Darunter ein Bild von Menschen, die in Wingsuits von einem Gebäude springen. Wenn die Wingsuits LED-Lichter haben, können sie nachts eigenartig blinken und sorgen für UFO-Berichte.
-	\item Ganz unten ein Bild eines Suchhelikopters mit Searchlight. Auch diese sorgen häufig für UFO-Sichtungen.
+    Die Ballons vereinzeln sich fast immer. Dadurch hat man nur noch die Ziffern von 0 bis 9. Die Wahrscheinlichkeit, eine Primzahl zu \frq erwischen\flq, wird immer geringer, je größer die Zahlen sind. Jedoch, unter den ersten 10 Zahlen (0-9) sind 4 Primzahlen: 2, 3, 5, 7. Die Chance, wenn man eine Zahl zwischen 0 und 9 auswählt, dass sie prim ist, ist also bei 40\%: viel größer, als man es normalerweise erwarten würde.
+
+    % Formel für die Primzahlverteilung
+    Die Verteilung der Primzahlen kann näherungsweise mit der Formel für die Primzahlfunktion beschrieben werden:
+    \[
+    \pi(x) \sim \frac{x}{\ln(x)}
+    \]
+
+    \pgfplotstablenew[
+        create on use/x/.style={
+            create col/expr={
+                \pgfplotstablerow
+            }
+        },
+        create on use/isprime/.style={
+            create col/assign/.code={
+                \pgfmathparse{isprime(\thisrow{x})}%
+                \pgfkeyslet{/pgfplots/table/create col/next content}\pgfmathresult%
+            }
+        },
+        create on use/primecount/.style={
+            create col/expr={
+                \pgfmathaccuma + \thisrow{isprime}
+            }
+        },
+        columns={x, isprime, primecount}
+    ]{9}\loadedtable
+
+    \pgfplotstablenew[
+        create on use/x/.style={
+            create col/expr={
+                \pgfplotstablerow
+            }
+        },
+        create on use/isprime/.style={
+            create col/assign/.code={
+                \pgfmathparse{isprime(\thisrow{x})}%
+                \pgfkeyslet{/pgfplots/table/create col/next content}\pgfmathresult%
+            }
+        },
+        create on use/primecount/.style={
+            create col/expr={
+                \pgfmathaccuma + \thisrow{isprime}
+            }
+        },
+        columns={x, isprime, primecount}
+    ]{1000}\loadedtablethousand
+
+    \begin{figure}[h]
+        \centering
+        \begin{minipage}[b]{0.45\linewidth}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    title={Primzahlzählfunktion von 0 bis 9: $\pi(x)$},
+                    xlabel=$x$,
+                    ylabel=$\pi(x)$,
+                    ymajorgrids=true,
+                    grid style=dashed,
+                    every axis plot/.append style={mark=*}
+                ]
+                \addplot[only marks, color=blue] table [x=x, y=primecount] {\loadedtable};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\linewidth}
+            \begin{tikzpicture}
+                \begin{axis}[
+                    title={Primzahlzählfunktion von 0 bis 1000: $\pi(x)$},
+                    xlabel=$x$,
+                    ylabel=$\pi(x)$,
+                    ymajorgrids=true,
+                    grid style=dashed,
+                    every axis plot/.append style={mark=*}
+                ]
+                \addplot[only marks, color=red] table [x=x, y=primecount] {\loadedtablethousand};
+                \end{axis}
+            \end{tikzpicture}
+        \end{minipage}
+    \end{figure}
+
+    \item Darunter sind ein Re-Entry, ein Satellit, der in der Atmosphäre verglüht, und Starlink, das Satellitensystem von Musk. \qr{https://en.wikipedia.org/wiki/Starlink}
+    \item Darunter ist ein UFO, das sich als hochgewehte Mülltüte herausgestellt hat.
+    \item Daneben ist ein Rauchring, wie er entstehen kann, wenn man große Trucks startet. \qr{https://www.youtube.com/watch?v=f1RmsJ1Rv9M}
+    \item Daneben sind zwei Bilder von Himmelslaternen, kleinen Kerzen in \frq Schläuchen\flq, die von der Hitze der Flamme emporgehoben wird, und dann zu fliegen beginnt.
+    \item Darunter ein Bild von Menschen, die in Wingsuits von einem Gebäude springen. Wenn die Wingsuits LED-Lichter haben, können sie nachts eigenartig blinken und sorgen für UFO-Berichte.
+    \item Ganz unten ein Bild eines Suchhelikopters mit Searchlight. Auch diese sorgen häufig für UFO-Sichtungen.
 \end{itemize}
 
 \end{document}
