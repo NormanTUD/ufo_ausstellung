@@ -72,8 +72,8 @@ compile_latex() {
 
 			# Delete temporary PNGs
 			echo -e "${GREEN}Cleaning up temporary files...${NC}"
-			rm "page-*.png"
-			rm "page-*-white.png"
+			rm page-*.png
+			rm page-*-white.png
 		else
 			echo -e "${RED}No PNG files created for $dir.pdf${NC}"
 		fi
