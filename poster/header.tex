@@ -31,7 +31,7 @@
 \usepackage{tikz}
 \usepackage{pgfplotstable}
 \usepackage{ifthen}
-
+\usepackage{geometry}
 \usepackage{qrcode}
 
 \emergencystretch2em
@@ -41,5 +41,11 @@
     \mbox{\qrcode[height=0.6in]{#2}\ifthenelse{\equal{#1}{}}{}{\textit{(#1)\quad}}} % Optionalen Text kursiv unter dem QR-Code
 }
 
-\usepackage{geometry}
-\newgeometry{left=0.1cm,bottom=0.1cm,top=0.1cm,right=0.1cm}
+\newgeometry{
+    left=0.1cm,
+    right=0.1cm,
+    top=0.1cm,
+    bottom=0.1cm,
+    paperwidth=25cm, % Breite der Seite
+    paperheight=29.7cm % Höhe der Seite (A4)
+}
