@@ -4,13 +4,10 @@
 \pgfplotsset{compat=1.17} % Setze die Kompatibilität
 
 \newcommand{\plotPrimeCount}[1]{%
-    \typeout{Versuche, die Datei 'prime_counts.csv' zu laden...} % Debug-Meldung
+    \typeout{Versuche, die Datei 'prime_counts_#1.csv' zu laden...} % Debug-Meldung
     % Lade die CSV-Daten
-    \pgfplotstableread[col sep=comma]{prime_counts.csv}\loadedtable
-    \typeout{prime_counts.csv geladen} % Debug-Meldung
-
-    % Überprüfe die Daten durch Ausgabe in der Konsole
-    \pgfplotstabletypeset[columns={x,pi}]{\loadedtable} % Ausgabe der Tabelle
+    \pgfplotstableread[col sep=comma]{prime_counts_#1.csv}\loadedtable
+    \typeout{prime_counts_#1.csv geladen} % Debug-Meldung
 
     \begin{figure}[h]
         \centering
@@ -34,7 +31,7 @@
 
 \begin{document}
 
-\plotPrimeCount{10}
+\plotPrimeCount{100}
 
 \end{document}
 
