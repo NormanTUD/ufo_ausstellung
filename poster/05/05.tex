@@ -7,7 +7,7 @@
 
 \input{../header.tex}
 
-\newcommand{\plotPrimeCount}[1]{
+\newcommand{\plotPrimeCount}[1]{%
     \pgfplotstablenew[
         col sep=comma,
         x=x,
@@ -25,7 +25,8 @@
                 grid style=dashed,
                 every axis plot/.append style={mark=*},
                 domain=0:#1,
-                samples=100
+                samples=100,
+                restrict y to domain=0:1000 % Passen Sie dies an, um den Y-Bereich zu beschränken
             ]
             \addplot[only marks, color=blue] table [x=x, y=pi(x)] {\loadedtable};
             \end{axis}
