@@ -152,4 +152,5 @@ for dir in "${directories[@]}"; do
 	fi
 
 	rm */*.auxlock 2>/dev/null >/dev/null || true
+	rm */*.synctex.gz 2>/dev/null >/dev/null || true
 done
