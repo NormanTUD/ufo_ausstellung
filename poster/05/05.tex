@@ -14,6 +14,7 @@
         x=x,
         y=pi % Der Spaltenname 'pi' muss genau so stimmen
     ]{prime_counts.csv}\loadedtable
+    \typeout{prime_counts.csv geladen}
 
     % Debug-Meldung, um den Inhalt der geladenen Tabelle anzuzeigen
     \pgfplotstabletypeset{\loadedtable} % Gibt die geladene Tabelle aus, was bei Problemen helfen kann.
@@ -44,7 +45,6 @@
         \end{tikzpicture}
     \end{figure}
 }
-
 
 
 \begin{document}
