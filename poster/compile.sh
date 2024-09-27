@@ -12,6 +12,7 @@ NC='\033[0m' # No color
 
 # MD5 hash cache file
 HASH_CACHE_FILE="$HOME/.md5_hashes"
+PNG_HASH_CACHE_FILE="$HOME/.png_hashes"
 
 # Check for the --view parameter
 view=false
@@ -38,16 +39,29 @@ compile_latex() {
 		hash_string+=$(cat "$dir.tex")
 		hash_string_hash=$(echo -n "$hash_string" | md5sum | awk '{print $1}')
 
+		echo -e "${YELLOW}Generated hash for $dir.tex:${NC} $hash_string_hash"
+		#echo -e "${YELLOW}Components of the hash:${NC}"
+		#echo "$hash_string" | while read -r line; do
+		#	echo "  - $line"
+		#done
+
 		# Check if the hash exists in the cache
 		cached_hash=$(grep "^$dir.tex" "$HASH_CACHE_FILE" | cut -d':' -f2)
 
+		if [[ "$cached_hash" ]]; then
+			echo -e "${YELLOW}Cached hash for $dir.tex:${NC} $cached_hash"
+		else
+			echo -e "${YELLOW}No cached hash found for $dir.tex.${NC}"
+		fi
+
 		if [[ "$hash_string_hash" != "$cached_hash" ]]; then
-			echo -e "${YELLOW}Running pdflatex...${NC}"
+			echo -e "${YELLOW}Changes detected. Running pdflatex...${NC}"
 			pdflatex "$dir.tex" && pdflatex "$dir.tex"
 
 			# Cache the new hash
 			sed -i "/^$dir\/$dir\.tex/d" "$HASH_CACHE_FILE" || true
 			echo "$dir.tex:$hash_string_hash" >> "$HASH_CACHE_FILE"
+			echo -e "${GREEN}Updated hash cached for $dir.tex:${NC} $hash_string_hash"
 
 			# Open the PDF if --view parameter is set
 			if [[ $view == true && -e "$dir.pdf" ]]; then
@@ -60,36 +74,56 @@ compile_latex() {
 
 		# Convert PDF to PNG
 		if command -v convert &> /dev/null; then
-			echo -e "${YELLOW}Converting PDF to PNG...${NC}"
-			convert -density 300 "$dir.pdf" -quality 90 -colorspace RGB "page-%03d.png" || true
+			echo -e "${YELLOW}Checking for existing PNG files...${NC}"
+			pdf_hash=$(md5sum "$dir.pdf" | awk '{print $1}')
+			cached_png_hash=$(grep "^$dir.pdf" "$PNG_HASH_CACHE_FILE" | cut -d':' -f2)
 
-			# Check if PNGs were generated
-			if ls page-*.png &> /dev/null; then
-				echo -e "${GREEN}PNG files created.${NC}"
+			echo -e "${YELLOW}Current PDF hash:${NC} $pdf_hash"
+			if [[ "$cached_png_hash" ]]; then
+				echo -e "${YELLOW}Cached PNG hash for $dir.pdf:${NC} $cached_png_hash"
+			else
+				echo -e "${YELLOW}No cached PNG hash found for $dir.pdf.${NC}"
+			fi
 
-				echo -e "${YELLOW}Merging PNGs...${NC}"
-				# Combine PNGs into a single PNG file
-				convert $(ls page-*.png | tr '\n' ' ') -gravity center -append "../$dir.png"
+			if [[ "$pdf_hash" != "$cached_png_hash" ]]; then
+				echo -e "${YELLOW}Converting PDF to PNG...${NC}"
+				convert -density 300 "$dir.pdf" -quality 90 -colorspace RGB "page-%03d.png" || true
 
-				echo -e "${YELLOW}Cleaning up temporary files...${NC}"
+				# Check if PNGs were generated
+				if ls page-*.png &> /dev/null; then
+					echo -e "${GREEN}PNG files created.${NC}"
 
-				if ls page-*.png 2>/dev/null >/dev/null; then
-					echo -e "${YELLOW}Deleting page files...${NC}"
-					rm page-*.png
+					echo -e "${YELLOW}Merging PNGs...${NC}"
+					# Combine PNGs into a single PNG file
+					convert $(ls page-*.png | tr '\n' ' ') -gravity center -append "../$dir.png"
+
+					echo -e "${YELLOW}Cleaning up temporary files...${NC}"
+
+					if ls page-*.png 2>/dev/null >/dev/null; then
+						echo -e "${YELLOW}Deleting page files...${NC}"
+						rm page-*.png
+					else
+						echo -e "${RED}No page-*.png files found...${NC}"
+					fi
+
+					if [[ -e "../$dir.png" ]]; then
+						echo -e "${YELLOW}Cropping png...${NC}"
+						convert "../$dir.png" -fuzz 10% -trim +repage "../$dir.png"
+					fi
+
+					if [[ -e "../$dir.png" ]]; then
+						convert "../$dir.png" -background white -alpha remove -alpha off "../$dir.png"
+					fi
+
+					# Cache the new PNG hash
+					sed -i "/^$dir.pdf/d" "$PNG_HASH_CACHE_FILE" || true
+					echo "$dir.pdf:$pdf_hash" >> "$PNG_HASH_CACHE_FILE"
+					echo -e "${GREEN}Updated PNG hash cached for $dir.pdf:${NC} $pdf_hash"
 				else
-					echo -e "${RED}No page-*.png files found...${NC}"
-				fi
-
-				if [[ -e "../$dir.png" ]]; then
-					echo -e "${YELLOW}Cropping png...${NC}"
-					convert "../$dir.png" -fuzz 10% -trim +repage "../$dir.png"
-				fi
-
-				if [[ -e "../$dir.png" ]]; then
-					convert "../$dir.png" -background white -alpha remove -alpha off "../$dir.png"
+					echo -e "${RED}No PNG files created for $dir.pdf${NC}"
 				fi
 			else
-				echo -e "${RED}No PNG files created for $dir.pdf${NC}"
+				echo -e "${YELLOW}No changes detected in PDF. Skipping PNG conversion.${NC}"
 			fi
 		else
 			echo -e "${RED}ImageMagick is not installed. Please install it to enable PNG conversion.${NC}"
@@ -107,8 +141,9 @@ if [[ ${#directories[@]} -eq 0 ]]; then
 	exit 1
 fi
 
-# Create the hash cache file if it doesn't exist
+# Create the hash cache files if they don't exist
 touch "$HASH_CACHE_FILE"
+touch "$PNG_HASH_CACHE_FILE"
 
 # Iterate over the directories
 for dir in "${directories[@]}"; do
@@ -120,3 +155,4 @@ for dir in "${directories[@]}"; do
 		fi
 	fi
 done
+
