@@ -59,28 +59,18 @@ compile_latex() {
 		# Check if PNGs were generated
 		if ls page-*.png &> /dev/null; then
 			echo -e "${GREEN}PNG files created.${NC}"
-			echo -e "${YELLOW}Creating white background PNGs...${NC}"
-
-			# Create PNGs with white background
-			for img in "page-*.png"; do
-			    convert "$img" -background white -flatten "${img%.png}-white.png"
-			done
 
 			echo -e "${YELLOW}Merging PNGs...${NC}"
 			# Combine PNGs into a single PNG file
-			montage "page-*-white.png" -tile x1 -geometry +0+0 "$dir.png"
+			convert $(ls page-*.png | tr '\n' ' ') -gravity center -append $dir.png
 
-			# Delete temporary PNGs
 			echo -e "${GREEN}Cleaning up temporary files...${NC}"
 
 			if ls page-*.png 2>/dev/null >/dev/null; then
 				echo -e "${GREEN}Deleting page files...${NC}"
-				rm page-*.png
-			fi
-
-			if ls page-*-white.png 2>/dev/null >/dev/null; then
-				echo -e "${GREEN}Deleting white files...${NC}"
-				rm page-*-white.png
+				#rm page-*.png
+			else
+				echo -e "${RED}No page-*.png files found...${NC}"
 			fi
 		else
 			echo -e "${RED}No PNG files created for $dir.pdf${NC}"
