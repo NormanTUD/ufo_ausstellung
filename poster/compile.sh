@@ -132,8 +132,7 @@ compile_latex() {
 		echo -e "${RED}No $dir.tex found${NC}"
 	fi
 	
-	git commit -am fix
-	git push
+	git commit -am fix && git push || true
 }
 
 # Check if any directories were provided
