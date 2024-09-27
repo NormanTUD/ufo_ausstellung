@@ -68,7 +68,7 @@ compile_latex() {
 
 			if ls page-*.png 2>/dev/null >/dev/null; then
 				echo -e "${GREEN}Deleting page files...${NC}"
-				#rm page-*.png
+				rm page-*.png
 			else
 				echo -e "${RED}No page-*.png files found...${NC}"
 			fi
