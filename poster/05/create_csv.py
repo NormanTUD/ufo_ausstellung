@@ -18,7 +18,7 @@ def save_to_csv(data, filename):
     # Speichere die Daten in einer CSV-Datei
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(['x', 'pi(x)'])  # Kopfzeile
+        writer.writerow(['x', 'pix'])  # Kopfzeile
         writer.writerows(data)
 
 def main():
