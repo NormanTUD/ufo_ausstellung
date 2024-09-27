@@ -57,7 +57,7 @@ compile_latex() {
 		convert -density 300 "$dir.pdf" -quality 90 -colorspace RGB "page-%03d.png" || true
 
 		# Check if PNGs were generated
-		if ls "page-*.png" &> /dev/null; then
+		if ls page-*.png &> /dev/null; then
 			echo -e "${GREEN}PNG files created.${NC}"
 			echo -e "${YELLOW}Creating white background PNGs...${NC}"
 
