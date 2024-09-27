@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17} % Setze die Kompatibilität
+
+\newcommand{\plotPrimeCount}[1]{%
+    \typeout{Versuche, die Datei 'prime_counts.csv' zu laden...} % Debug-Meldung
+    % Lade die CSV-Daten
+    \pgfplotstableread[col sep=comma]{prime_counts.csv}\loadedtable
+    \typeout{prime_counts.csv geladen} % Debug-Meldung
+
+    % Überprüfe die Daten durch Ausgabe in der Konsole
+    \pgfplotstabletypeset[columns={x,pi}]{\loadedtable} % Ausgabe der Tabelle
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                title={Primzahlzählfunktion von 1 bis #1: $\pi(x)$},
+                xlabel=$x$,
+                ylabel=$\pi(x)$,
+                ymajorgrids=true,
+                grid style=dashed,
+                every axis plot/.append style={mark=*},
+                domain=0:#1,
+                samples=100,
+            ]
+                % Plot der Daten aus der CSV-Datei
+                \addplot[only marks, color=blue] table [x=x, y=pi] {\loadedtable};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+}
+
+\begin{document}
+
+\plotPrimeCount{10}
+
+\end{document}
+
