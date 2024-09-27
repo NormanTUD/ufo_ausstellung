@@ -1,4 +1,7 @@
 #!/bin/bash
+
+original_dir=$(pwd)
+
 set -e  # Exit immediately if a command exits with a non-zero status
 
 # Colors for output
@@ -66,7 +69,7 @@ compile_latex() {
 
 				echo -e "${YELLOW}Merging PNGs...${NC}"
 				# Combine PNGs into a single PNG file
-				convert $(ls page-*.png | tr '\n' ' ') -gravity center -append "$dir.png"
+				convert $(ls page-*.png | tr '\n' ' ') -gravity center -append "../$dir.png"
 
 				echo -e "${YELLOW}Cleaning up temporary files...${NC}"
 
@@ -77,13 +80,13 @@ compile_latex() {
 					echo -e "${RED}No page-*.png files found...${NC}"
 				fi
 
-				if [[ -e $dir.png ]]; then
+				if [[ -e "../$dir.png" ]]; then
 					echo -e "${YELLOW}Cropping png...${NC}"
-					convert "$dir.png" -fuzz 10% -trim +repage "$dir.png"
+					convert "$dir.png" -fuzz 10% -trim +repage "../$dir.png"
 				fi
 
 				if [[ -e $dir.png ]]; then
-					convert "$dir.png" -background white -alpha remove -alpha off "$dir.png"
+					convert "../$dir.png" -background white -alpha remove -alpha off "../$dir.png"
 				fi
 			else
 				echo -e "${RED}No PNG files created for $dir.pdf${NC}"
@@ -92,7 +95,7 @@ compile_latex() {
 			echo -e "${RED}ImageMagick is not installed. Please install it to enable PNG conversion.${NC}"
 		fi
 
-		cd - || exit
+		cd "$original_dir" || exit
 	else
 		echo -e "${RED}No $dir.tex found${NC}"
 	fi
