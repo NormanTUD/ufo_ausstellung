@@ -7,6 +7,32 @@
 
 \input{../header.tex}
 
+\newcommand{\plotPrimeCount}[1]{
+    \pgfplotstablenew[
+        col sep=comma,
+        x=x,
+        y=pi(x)
+    ]{prime_counts.csv}\loadedtable
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                title={Primzahlzählfunktion von 0 bis #1: $\pi(x)$},
+                xlabel=$x$,
+                ylabel=$\pi(x)$,
+                ymajorgrids=true,
+                grid style=dashed,
+                every axis plot/.append style={mark=*},
+                domain=0:#1,
+                samples=100
+            ]
+            \addplot[only marks, color=blue] table [x=x, y=pi(x)] {\loadedtable};
+            \end{axis}
+        \end{tikzpicture}
+    \end{figure}
+}
+
 \begin{document}
 
 \textit{Von oben nach unten und links nach rechts}:
@@ -22,78 +48,8 @@
     \pi(x) \sim \frac{x}{\ln(x)}
     \]
 
-    \pgfplotstablenew[
-        create on use/x/.style={
-            create col/expr={
-                \pgfplotstablerow
-            }
-        },
-        create on use/isprime/.style={
-            create col/assign/.code={
-                \pgfmathparse{isprime(\thisrow{x})}%
-                \pgfkeyslet{/pgfplots/table/create col/next content}\pgfmathresult%
-            }
-        },
-        create on use/primecount/.style={
-            create col/expr={
-                \pgfmathaccuma + \thisrow{isprime}
-            }
-        },
-        columns={x, isprime, primecount}
-    ]{9}\loadedtable
-
-    \pgfplotstablenew[
-        create on use/x/.style={
-            create col/expr={
-                \pgfplotstablerow
-            }
-        },
-        create on use/isprime/.style={
-            create col/assign/.code={
-                \pgfmathparse{isprime(\thisrow{x})}%
-                \pgfkeyslet{/pgfplots/table/create col/next content}\pgfmathresult%
-            }
-        },
-        create on use/primecount/.style={
-            create col/expr={
-                \pgfmathaccuma + \thisrow{isprime}
-            }
-        },
-        columns={x, isprime, primecount}
-    ]{2000}\loadedtablelarge
-
-    \begin{figure}[h]
-        \centering
-        \begin{minipage}[b]{0.45\linewidth}
-            \begin{tikzpicture}
-                \begin{axis}[
-                    title={Primzahlzählfunktion von 0 bis 9: $\pi(x)$},
-                    xlabel=$x$,
-                    ylabel=$\pi(x)$,
-                    ymajorgrids=true,
-                    grid style=dashed,
-                    every axis plot/.append style={mark=*}
-                ]
-                \addplot[only marks, color=blue] table [x=x, y=primecount] {\loadedtable};
-                \end{axis}
-            \end{tikzpicture}
-        \end{minipage}
-        \hfill
-        \begin{minipage}[b]{0.45\linewidth}
-            \begin{tikzpicture}
-                \begin{axis}[
-                    title={Primzahlzählfunktion von 0 bis 2000: $\pi(x)$},
-                    xlabel=$x$,
-                    ylabel=$\pi(x)$,
-                    ymajorgrids=true,
-                    grid style=dashed,
-                    every axis plot/.append style={mark=*}
-                ]
-                \addplot[only marks, color=red] table [x=x, y=primecount] {\loadedtablelarge};
-                \end{axis}
-            \end{tikzpicture}
-        \end{minipage}
-    \end{figure}
+	\plotPrimeCount{10}
+	\plotPrimeCount{1000}
 
     Es ist ersichtlich, dass es immer weniger Primzahlen werden, d.\,h. die Dichte der Primzahlen nimmt ab. Bei einer zufällig gewählten Zahl ist die Wahrscheinlichkeit, dass sie prim ist, generell verschwindend gering. Aber unter den ersten 10 Ziffern (0 bis 9, also genau die Zahlen, die vereinzelte Ballons \frq anzeigen\flq\ können), sind bereits 4 Primzahlen (2, 3, 5, 7), d.\,h. es besteht eine Chance von 40\,\%, dass eine in diesem Range gewählte Zahl prim ist. Viel höher als sonst.
 
