@@ -153,4 +153,6 @@ for dir in "${directories[@]}"; do
 
 	rm */*.auxlock 2>/dev/null >/dev/null || true
 	rm */*.synctex.gz 2>/dev/null >/dev/null || true
+	rm */*.log 2>/dev/null >/dev/null || true
+	rm */*.aux 2>/dev/null >/dev/null || true
 done
