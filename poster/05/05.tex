@@ -12,11 +12,11 @@
     \pgfplotstablenew[
         col sep=comma,
         x=x,
-        y=pi % Achte darauf, dass der Spaltenname hier korrekt ist
+        y=pi % Hier sollte der Spaltenname 'pi' sein
     ]{prime_counts.csv}\loadedtable
 
     % Debug-Meldung, ob die Tabelle erfolgreich geladen wurde
-    \pgfplotstabletypeset{\loadedtable} % Gibt eine Fehlermeldung aus, wenn die Tabelle nicht geladen werden kann.
+    \pgfplotstabletypeset{\loadedtable} % Gibt die geladene Tabelle aus, was bei Problemen helfen kann.
     \typeout{Die Tabelle wurde erfolgreich geladen.} % Debug-Meldung
 
     % Überprüfe, ob die Tabelle leer ist
@@ -38,11 +38,12 @@
                 samples=100,
                 restrict y to domain=0:1000 % Passen Sie dies an, um den Y-Bereich zu beschränken
             ]
-            \addplot[only marks, color=blue] table [x=x, y=pi] {\loadedtable}; % Korrektur von y=pix zu y=pi
+            \addplot[only marks, color=blue] table [x=x, y=pi] {\loadedtable}; % Stelle sicher, dass hier y=pi ist
             \end{axis}
         \end{tikzpicture}
     \end{figure}
 }
+
 
 \begin{document}
 
