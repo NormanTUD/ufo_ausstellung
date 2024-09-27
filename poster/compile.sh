@@ -48,37 +48,37 @@ compile_latex() {
 		    echo -e "${YELLOW}Opening PDF: $dir/$dir.pdf${NC}"
 		    xdg-open "$dir.pdf" &
 	    fi
-    else
-	    echo -e "${YELLOW}No changes detected. Skipping compilation for $dir.tex${NC}"
+	else
+		echo -e "${YELLOW}No changes detected. Skipping compilation for $dir.tex${NC}"
 	fi
 	# Convert PDF to PNG
 	if command -v convert &> /dev/null; then
 		echo -e "${YELLOW}Converting PDF to PNG...${NC}"
 		convert -density 300 "$dir.pdf" -quality 90 -colorspace RGB "page-%03d.png" || true
 
-	# Check if PNGs were generated
-	if ls "page-*.png" &> /dev/null; then
-		echo -e "${GREEN}PNG files created.${NC}"
-		echo -e "${YELLOW}Creating white background PNGs...${NC}"
+		# Check if PNGs were generated
+		if ls "page-*.png" &> /dev/null; then
+			echo -e "${GREEN}PNG files created.${NC}"
+			echo -e "${YELLOW}Creating white background PNGs...${NC}"
 
-	    # Create PNGs with white background
-	    for img in "page-*.png"; do
-		    convert "$img" -background white -flatten "${img%.png}-white.png"
-	    done
+			# Create PNGs with white background
+			for img in "page-*.png"; do
+			    convert "$img" -background white -flatten "${img%.png}-white.png"
+			done
 
-	    echo -e "${YELLOW}Merging PNGs...${NC}"
-	    # Combine PNGs into a single PNG file
-	    montage "page-*-white.png" -tile 1x -geometry +0+0 "$dir.png"
+			echo -e "${YELLOW}Merging PNGs...${NC}"
+			# Combine PNGs into a single PNG file
+			montage "page-*-white.png" -tile 1x -geometry +0+0 "$dir.png"
 
-	    # Delete temporary PNGs
-	    echo -e "${GREEN}Cleaning up temporary files...${NC}"
-	    rm "page-*.png"
-	    rm "page-*-white.png"
-    else
-	    echo -e "${RED}No PNG files created for $dir.pdf${NC}"
-	fi
-else
-	echo -e "${RED}ImageMagick is not installed. Please install it to enable PNG conversion.${NC}"
+			# Delete temporary PNGs
+			echo -e "${GREEN}Cleaning up temporary files...${NC}"
+			rm "page-*.png"
+			rm "page-*-white.png"
+		else
+			echo -e "${RED}No PNG files created for $dir.pdf${NC}"
+		fi
+	else
+		echo -e "${RED}ImageMagick is not installed. Please install it to enable PNG conversion.${NC}"
 	fi
 
 	cd - || exit
