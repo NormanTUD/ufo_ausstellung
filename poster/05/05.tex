@@ -12,10 +12,17 @@
     \pgfplotstablenew[
         col sep=comma,
         x=x,
-        y=pi
+        y=pi % Achte darauf, dass der Spaltenname hier korrekt ist
     ]{prime_counts.csv}\loadedtable
 
+    % Debug-Meldung, ob die Tabelle erfolgreich geladen wurde
     \pgfplotstabletypeset{\loadedtable} % Gibt eine Fehlermeldung aus, wenn die Tabelle nicht geladen werden kann.
+    \typeout{Die Tabelle wurde erfolgreich geladen.} % Debug-Meldung
+
+    % Überprüfe, ob die Tabelle leer ist
+    \ifnum\pgfplotstable@count=0
+        \typeout{Warnung: Die Tabelle ist leer!}
+    \fi
 
     \begin{figure}[h]
         \centering
