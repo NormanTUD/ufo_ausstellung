@@ -68,12 +68,20 @@ compile_latex() {
 
 			echo -e "${YELLOW}Merging PNGs...${NC}"
 			# Combine PNGs into a single PNG file
-			montage "page-*-white.png" -tile 1x -geometry +0+0 "$dir.png"
+			montage "page-*-white.png" -tile x1 -geometry +0+0 "$dir.png"
 
 			# Delete temporary PNGs
 			echo -e "${GREEN}Cleaning up temporary files...${NC}"
-			rm page-*.png
-			rm page-*-white.png
+
+			if ls page-*.png 2>/dev/null >/dev/null; then
+				echo -e "${GREEN}Deleting page files...${NC}"
+				rm page-*.png
+			fi
+
+			if ls page-*-white.png 2>/dev/null >/dev/null; then
+				echo -e "${GREEN}Deleting white files...${NC}"
+				rm page-*-white.png
+			fi
 		else
 			echo -e "${RED}No PNG files created for $dir.pdf${NC}"
 		fi
