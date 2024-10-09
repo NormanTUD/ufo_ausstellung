@@ -35,7 +35,7 @@ die Primzahlfunktion beschrieben werden:
     </mfrac>
   </mrow>
 </math>
-
+<br>
 <img src="pz_graph.png">
 
 </p>
