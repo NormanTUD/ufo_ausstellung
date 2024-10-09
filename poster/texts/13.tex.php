@@ -35,7 +35,7 @@ Die Geschichte wird allgemein als Hoax verstanden.</p>
 </li>
 <li><p>Das Flatwoods-Monster, das angeblich 1952 in Flatwoods, West
 Virginia, USA gesichtet worden sein soll. Der Aliensichtung ging eine
-UFO-Sichtung zuvor, die ein Flugzeugabsturz in der Nähe war.</p>
+UFO-Sichtung zuvor, die ein Flugzeugabsturz in der Nähe war. Wahrscheinlich war es eine Eule.</p>
 
 		\qr[\wikipedia{} Flatwoods-Monster]{https://de.wikipedia.org/wiki/Flatwoods_Monster}
 </li>
