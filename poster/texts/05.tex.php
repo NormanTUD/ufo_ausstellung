@@ -16,8 +16,26 @@ wird immer geringer, je größer die Zahlen sind. Jedoch, unter den ersten
 Zahl zwischen 0 und 9 auswählt, dass sie prim ist, ist also bei 40%:
 viel größer, als man es normalerweise erwarten würde.</p>
 <p>Die Verteilung der Primzahlen kann näherungsweise mit der Formel für
-die Primzahlfunktion beschrieben werden: <span
-class="math display">$$\pi(x) \sim \frac{x}{\ln(x)}$$</span></p>
+die Primzahlfunktion beschrieben werden: 
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>π</mi>
+    <mo>(</mo>
+    <mi>x</mi>
+    <mo>)</mo>
+    <mo>∼</mo>
+    <mfrac>
+      <mi>x</mi>
+      <mrow>
+        <mi>ln</mi>
+        <mo>(</mo>
+        <mi>x</mi>
+        <mo>)</mo>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>
+</p>
 <p>Es ist ersichtlich, dass es immer weniger Primzahlen werden, d. h.
 die Dichte der Primzahlen nimmt ab. Bei einer zufällig gewählten Zahl
 ist die Wahrscheinlichkeit, dass sie prim ist, generell verschwindend
@@ -27,7 +45,7 @@ Primzahlen (2, 3, 5, 7), d. h. es besteht eine Chance von 40 %, dass
 eine in diesem Range gewählte Zahl prim ist. Viel höher als
 sonst.</p>
 
-	\qr[\wikipedia{} Prime-Counting-Function <span class="math display">$$\pi$$</span>]{https://en.wikipedia.org/wiki/Prime-counting_function} \qr[\youtube{} Plasmoid Anomalies Study Group]{https://www.youtube.com/user/MiamiUFO}
+	\qr[\wikipedia{} Prime-Counting-Function π]{https://en.wikipedia.org/wiki/Prime-counting_function} \qr[\youtube{} Plasmoid Anomalies Study Group]{https://www.youtube.com/user/MiamiUFO}
 </li>
 <li><p>Darunter sind ein Re-Entry, ein Satellit, der in der Atmosphäre
 verglüht, und Starlink, das Satellitensystem von Musk.</p>
