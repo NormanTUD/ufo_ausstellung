@@ -14,6 +14,7 @@ Sprites können in verschiedenen Formen auftreten, einschließlich
 diffusen und filiformen Strukturen, und können über 100 Kilometer in die
 Höhe reichen.
 
+\qr[\wikipedia{} Sprites]{https://de.wikipedia.org/wiki/Sprite_(Wetterph\%C3\%A4nomen)} \qr[Paper über Sprites]{https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2003JA009972}
 </p>
 <p>Links, das Bild mit der Wolke, zeigt einen Crown-Flash. Das ist ein
 Lichtstrahl, der sich bewegt, als würde er von einem Suchscheinwerfer
@@ -25,6 +26,7 @@ dieses Lichts erzeugt die charakteristische Erscheinung eines
 Crown-Flashes, der oft während heftiger Gewitter auftritt und in
 verschiedenen Farben wahrgenommen werden kann.
 
+\qr[\wikipedia{} Crown-Flashes]{https://de.wikipedia.org/wiki/Crown_Flash} \qr[\youtube{} Crown-Flashes]{https://www.youtube.com/watch?v=zGKC1hZQSog}
 </p>
 <p>Darunter ist ein sogenannter Blue Jet, ein spezieller, sehr seltener
 Blitztyp, der in die Höhe geht, statt zum Boden. Blue Jets entstehen
@@ -34,7 +36,7 @@ charakteristische blaue Farbe entsteht durch die Wechselwirkung des
 Lichtes mit Molekülen in der Atmosphäre, insbesondere Stickstoff. Diese
 Phänomene sind schwer zu beobachten, da sie nur wenige Millisekunden
 dauern und in der Regel mit starken Gewittern verbunden sind.
-
+\qr[\wikipedia{} Hochatmosphärenblitze]{https://en.wikipedia.org/wiki/Upper-atmospheric_lightning}
 </p>
 <p>Ganz unten ist eine sogenannte Lentikularwolke. Diese Wolken haben
 eine linseähnliche Form und entstehen durch die Störung der
@@ -44,6 +46,6 @@ ein Indikator für kommende Wetterwechsel sein. Diese Wolken wurden
 vermutlich für die Form vieler UFO-Sichtungen maßgebend, da ihre
 ungewöhnliche Form und Erscheinung leicht mit extraterrestrischen
 Objekten verwechselt werden können.
-
+\qr[\wikipedia{} Lentikularwolken]{https://de.wikipedia.org/wiki/Lenticularis}
 </p>
 <?php include('footer.php'); ?>
