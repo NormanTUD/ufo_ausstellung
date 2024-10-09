@@ -60,6 +60,8 @@ function parseQRText() {
             }
 
             table.appendChild(tbody);
+            
+            node.innerHTML = node.innerHTML.replaceAll(/\\qr\[(.*?)\]\{(.*?)\}/g, '');
 
             // Tabelle unter das jeweilige <li>-Element einfügen
             node.after(table);
