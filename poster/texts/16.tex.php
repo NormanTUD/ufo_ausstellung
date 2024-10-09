@@ -8,7 +8,7 @@ Veranstaltungen sieht. Sie werfen extrem helle, fokussierte Strahlen in
 den Himmel, die beim Auftreffen auf Wolken eine spektakuläre Show
 bieten. Wenn die Strahlen auf die Wolken treffen, können sie bizarre
 Muster und Formen erzeugen, die manchmal einfach atemberaubend sind.
-
+\qr[\wikipedia  Himmelsstrahler]{https://de.wikipedia.org/wiki/Himmelsstrahler}
 </p>
 <p>Diese Lichtspiele sind nicht nur ein Fest für die Augen, sondern
 haben auch schon für einige UFO-Sichtungen gesorgt. Manchmal wird der
@@ -44,6 +44,6 @@ also helfen, die Umgebung genau zu kartieren und sogar etwas wie die
 Höhenlage von Wolken zu bestimmen. So wird die Technologie nicht nur für
 wissenschaftliche Zwecke verwendet, sondern bietet auch spannende
 Möglichkeiten, um unerklärliche Phänomene am Himmel zu untersuchen.
-
+\qr[\wikipedia  Lunar Laser Ranging]{https://de.wikipedia.org/wiki/Lunar_Laser_Ranging}
 </p>
 <?php include('footer.php'); ?>
