@@ -36,15 +36,17 @@ diskutiert wurden, zeigte sich, dass das Spektakel eine hochentwickelte
 und koordinierte Erscheinung war, die durch die Umstände des
 misslungenen Raketentests hervorgerufen wurde. Interessanterweise fand
 die Expansion des spiralförmigen Phänomens mit einer Geschwindigkeit von
-über 12,000 <span
-class="math inline">$\frac{\text{km}}{\text{h}}$</span>) statt, was auf
+über 12,000 km/h) statt, was auf
 eine immense Dynamik hindeutet.</p>
 <p>Eine der bekanntesten Behauptungen kam von David Wilcock, der die
 EISCAT-Einrichtung in Norwegen mit dem Phänomen in Verbindung brachte
 und darauf hinwies, dass die Symmetrie der Spirale die Theorie eines
 misslungenen Raketenstarts in Frage stellt.</p>
 <p>Die bekanntestes Raketenspirale war die <em>2009 Norwegian Sky Spiral
-Anomaly</em>, die 2009 über Norwegen aufgetaucht war.</p>
+Anomaly</em>, die 2009 über Norwegen aufgetaucht war.
+\qr[\wikipedia{} Norwegian Sky Anomaly]{https://en.wikipedia.org/wiki/2009_Norwegian_spiral_anomaly}
+\qr[Analyse der Norway Spiral sky Anomaly]{https://web.archive.org/web/20210527205256/http://www.spellconsulting.com/reality/Norway_Spiral.html}
+</p>
 <p>Der Begriff <em>Space Jellyfish</em> (auch bekannt als <em>Jellyfish
 UFO</em> oder <em>Rocket Jellyfish</em>) beschreibt ein Phänomen, das
 mit Raketenstarts in Verbindung steht. Es entsteht, wenn Sonnenlicht von
@@ -55,5 +57,7 @@ Abgasfahnen in großer Höhe weiterhin direktem Sonnenlicht ausgesetzt
 sind. Diese leuchtende Erscheinung erinnert an eine Qualle.</p>
 <p>Die Sichtungen dieses Phänomens haben zu Panik, Ängsten vor einem
 nuklearen Raketenangriff und Berichten über unidentifizierte fliegende
-Objekte geführt.</p>
+Objekte geführt.
+\qr[\wikipedia{} Space Jellyfish]{https://en.wikipedia.org/wiki/Space_jellyfish}
+</p>
 <?php include('footer.php'); ?>
