@@ -41,3 +41,4 @@ nachts eigenartig blinken und sorgen für UFO-Berichte.</p></li>
 <li><p>Ganz unten ein Bild eines Suchhelikopters mit Searchlight. Auch
 diese sorgen häufig für UFO-Sichtungen.</p></li>
 </ul>
+<?php include('footer.php'); ?>

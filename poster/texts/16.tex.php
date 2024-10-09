@@ -34,3 +34,4 @@ also helfen, die Umgebung genau zu kartieren und sogar etwas wie die
 Höhenlage von Wolken zu bestimmen. So wird die Technologie nicht nur für
 wissenschaftliche Zwecke verwendet, sondern bietet auch spannende
 Möglichkeiten, um unerklärliche Phänomene am Himmel zu untersuchen.</p>
+<?php include('footer.php'); ?>

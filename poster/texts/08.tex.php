@@ -46,3 +46,4 @@ perfekte Aufhänger für all jene, die das Außergewöhnliche suchen. Man
 fragt sich, wie oft eine gute Sternschnuppe für den nächsten großen
 UFO-Skandal verantwortlich ist.</p></li>
 </ul>
+<?php include('footer.php'); ?>

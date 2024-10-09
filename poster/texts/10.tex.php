@@ -24,3 +24,4 @@ Pressekonferenz über den Absturz gegeben hat.</p></li>
 <li><p>Darunter ein Flare, eine militärische Leuchtrakete, die oft für
 UFO-Sichtungen sorgt.</p></li>
 </ul>
+<?php include('footer.php'); ?>

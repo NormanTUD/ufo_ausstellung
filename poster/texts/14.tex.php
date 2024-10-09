@@ -21,3 +21,4 @@ Weltkrieg berichtet worden. Die Nazis dachten, es wäre eine Geheimwaffe
 der Amerikaner und umgekehrt. Diese Kugeln sollen über längere Strecken
 Flugzeuge verfolgt und sich intelligent verhalten haben.</p></li>
 </ul>
+<?php include('footer.php'); ?>

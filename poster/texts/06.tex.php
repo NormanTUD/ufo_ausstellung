@@ -16,3 +16,4 @@ worden sein soll. Höchstwahrscheinlich war es ein Solarballon.</p></li>
 <li><p>Daneben zwei UFOs, die der Kontaktler Adamski angeblich gesehen
 haben will.</p></li>
 </ul>
+<?php include('footer.php'); ?>

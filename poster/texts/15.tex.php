@@ -87,3 +87,4 @@ Flugzeug-Triebwerkes in der Entfernung.</p></li>
 kommt das Bild aus der Doku <em>The Secret KGB UFO Files</em> und wurde
 nur falsch benannt unter der UFO-Szene immer weiter gegeben.</p></li>
 </ul>
+<?php include('footer.php'); ?>

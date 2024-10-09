@@ -67,3 +67,4 @@ Mussolini und einige weitere Regierungen UFOs geborgen hätten. Er sagte
 das unter Eid im US-Kongress aus, lieferte aber keine Beweise für seine
 Behauptungen, die insgesamt unglaubwürdig sind.</p></li>
 </ul>
+<?php include('footer.php'); ?>

@@ -36,3 +36,4 @@ Ereignisse verdeutlichen, wie militärische Aktivitäten leicht zu
 Spekulationen über UFOs führen können, und werfen Fragen zur Art und
 Weise auf, wie Informationen über solche Vorfälle vermittelt und
 interpretiert werden.</p>
+<?php include('footer.php'); ?>

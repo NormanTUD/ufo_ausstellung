@@ -24,3 +24,4 @@ Die Geschichte wird allgemein als Hoax verstanden.</p></li>
 Virginia, USA gesichtet worden sein soll. Der Aliensichtung ging eine
 UFO-Sichtung zuvor, die ein Flugzeugabsturz in der Nähe war.</p></li>
 </ul>
+<?php include('footer.php'); ?>

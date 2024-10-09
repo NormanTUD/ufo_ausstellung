@@ -29,3 +29,4 @@ fehlklassifiziert wurde.</p></li>
 <li><p>London Alien: Angebliche Aliens, die in London aufgenommen worden
 sein sollen.</p></li>
 </ul>
+<?php include('footer.php'); ?>

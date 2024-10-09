@@ -18,3 +18,4 @@ Jagdflugzeug verfolgt. Höchstwahrscheinlich ist es eine
 Fotomanipulation, und das UFO eigentlich die Spitze eines
 Berges.</p></li>
 </ul>
+<?php include('footer.php'); ?>

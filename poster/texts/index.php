@@ -14,3 +14,4 @@
 <a href="14.tex.html">13</a><br>
 <a href="15.tex.html">14</a><br>
 <a href="16.tex.html">15</a><br>
+<?php include('footer.php'); ?>

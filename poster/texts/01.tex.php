@@ -73,3 +73,4 @@ gesichtet worden sein soll. Jedoch ist die Quellenlage äußerst schlecht,
 es ist alles anonym und das gesamte Video, das angeblich existieren
 soll, wurde nie veröffentlicht.</p></li>
 </ul>
+<?php include('footer.php'); ?>

@@ -52,3 +52,4 @@ sind. Diese leuchtende Erscheinung erinnert an eine Qualle.</p>
 <p>Die Sichtungen dieses Phänomens haben zu Panik, Ängsten vor einem
 nuklearen Raketenangriff und Berichten über unidentifizierte fliegende
 Objekte geführt.</p>
+<?php include('footer.php'); ?>

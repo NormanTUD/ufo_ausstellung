@@ -36,3 +36,4 @@ ein Indikator für kommende Wetterwechsel sein. Diese Wolken wurden
 vermutlich für die Form vieler UFO-Sichtungen maßgebend, da ihre
 ungewöhnliche Form und Erscheinung leicht mit extraterrestrischen
 Objekten verwechselt werden können.</p>
+<?php include('footer.php'); ?>

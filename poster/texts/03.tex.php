@@ -40,3 +40,4 @@ Höchstwahrscheinlich war es ein Versuch, ein immersives Marketing-ARG zu
 erstellen, wie es z. B. Lost auch vorher gemacht hat. Gescheitert ist
 dieser Plan vermutlich am Streik der amerikanischen Film- und
 Serienautoren zur selben Zeit.</p>
+<?php include('footer.php'); ?>

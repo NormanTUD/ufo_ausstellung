@@ -22,3 +22,4 @@ header('Content-Type: image/png');
 // Generiere den QR-Code und gebe ihn direkt aus
 QRcode::png($url, false, QR_ECLEVEL_L, $size, 2);
 ?>
+<?php include('footer.php'); ?>
