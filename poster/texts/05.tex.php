@@ -27,6 +27,7 @@ Primzahlen (2, 3, 5, 7), d. h. es besteht eine Chance von 40 %, dass
 eine in diesem Range gewählte Zahl prim ist. Viel höher als
 sonst.</p>
 
+	\qr[\wikipedia{} Prime-Counting-Function <span class="math display">$$\pi$$</span>]{https://en.wikipedia.org/wiki/Prime-counting_function} \qr[\youtube{} Plasmoid Anomalies Study Group]{https://www.youtube.com/user/MiamiUFO}
 </li>
 <li><p>Darunter sind ein Re-Entry, ein Satellit, der in der Atmosphäre
 verglüht, und Starlink, das Satellitensystem von Musk.</p>
@@ -39,6 +40,7 @@ herausgestellt hat.</p>
 <li><p>Daneben ist ein Rauchring, wie er entstehen kann, wenn man große
 Trucks startet.</p>
 
+	    \qr[\youtube{} \frq The Truth Is Out There\flq\ über Rauchringe]{https://www.youtube.com/watch?v=f1RmsJ1Rv9M}
 </li>
 <li><p>Daneben sind zwei Bilder von Himmelslaternen, kleinen Kerzen in
 Schläuchen, die von der Hitze der Flamme emporgehoben wird, und dann zu
