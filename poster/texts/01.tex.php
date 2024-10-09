@@ -19,7 +19,7 @@ intensiver Bemühungen, nicht debunked.</p>
 und dabei ein Geräusch gehört, schnell ein Bild gemacht und diesen Alien
 gesehen. Generell ist die UFO-Community sich einig, dass es ein Fake
 ist.</p>
-
+\qr[Fandom-Wiki-Eintrag zum 4chan-Alien]{https://obscurban-legend.fandom.com/wiki/4chan_Grey_Alien}
 </li>
 <li><p>Die beiden grauen Aliens und die beiden Aliens, die
 nebeneinanderstehen, kommen auch von <em>Ivan0135</em>. Ihr Status ist
@@ -34,7 +34,7 @@ erinnert sich nicht daran, dass da jemand gewesen wäre außer seiner Frau
 und seiner Tochter. Auflösung: er hat seine Frau photographiert, die er
 im Sucher nicht sehen konnte, weil der nur einen Ausschnitt zeigt, und
 sie wurde überbelichtet.</p>
-
+\qr[\wikipedia{} Solway Firth Spaceman]{https://en.wikipedia.org/wiki/Solway_Firth_Spaceman}
 </li>
 <li><p>Das nächste Bild zeigt den <em>Atacama-Humanoid</em>, auch
 <em>Ata</em> genannt. Er wurde 2003 von Grabräubern in der Kirche der
@@ -60,7 +60,7 @@ Atomunfall, der fast so schwerwiegend war wie in Tschernobyl, aber
 vertuscht wurde. Höchstwahrscheinlich war <em>Alyoshenka</em> ein durch
 Strahlen fehlgebildeter Mensch. Da aber die Leiche verschwunden ist,
 lässt sich das nicht mehr überprüfen.</p>
-
+\qr[\wikipedia{} Alyoshenka]{https://en.wikipedia.org/wiki/Alyoshenka} \qr[Unheimlich-Podcast über Alyoshenka]{https://www.unheimlichpodcast.de/mystery-podcast-ep04-das-baby-alyoshenka}
 </li>
 <li><p>Das Bild links zeigt <em>Mona Lisa</em>, angeblich ein Alien, der
 auf der geheimen <em>Apollo 20</em>-Mission gefunden woren sein soll.
@@ -69,34 +69,38 @@ Video gefaket zu haben, und hatte auch noch die Probs, die er dafür
 benutzt hat als Beweis. Er hat sie unter zwei Accounts hochgelden,
 retiredafb und moonwalker1966delta.</p>
 
+\qr[\youtube{} retiredafb]{https://www.youtube.com/user/retiredafb} \qr[\youtube{} moonwalker1966delta]{https://www.youtube.com/@moonwalker1966delta/videos}
+\qr[Wikibooks-Eintrag über den Apollo-20-Hoax]{https://en.wikibooks.org/wiki/User:Moby-Dick4000/Apollo_20_hoax}
 </li>
 <li><p>Das nächste Alien kommt von <em>Dr. Jonathan Reed</em>, der
 meinte, er habe diesen Alien im Wald gesehen, er habe seinen Hund
 angegriffen und er hat ihn mit einem Stock getötet. Es wird allgemein
 als Fake anerkannt.</p>
 
+\qr[Fandom-Wiki zum Reed-Alien-Fall]{https://extraterrestrials.fandom.com/wiki/Reed_Case}
 </li>
 <li><p>Die nächsten beiden Bilder zeigen einen Außerirdischen, der
 angeblich aus Roswell stammt. Eigentlich zeigt es jedoch nur ein Modell
 in einem UFO-Museum (links das Bild des Modells, rechts der
 Alien).</p>
 
+\qr[Artikel über den Roswell-Zwischenfall]{https://science.howstuffworks.com/space/aliens-ufos/history-roswell-incident.htm}
 </li>
 <li><p>Die letzte Reihe zeigt links die <em>McPherson-Tapes</em>,
 angeblich ein Video einer echten Belagerung durch Außerirdische, ist es
 in Wirklichkeit ein Low-Budget-Found-Footage-Film von 1989.</p>
-
+\qr[Fandom-Wiki-Eintrag zu den McPherson-Tapes]{https://extraterrestrials.fandom.com/wiki/McPherson_Tape}
 </li>
 <li><p>Das mittlere unterste Bild zeigt die <em>Alien Autopsy</em> eines
 angeblich in Roswell gefunden Aliens. In Wahrheit ist es jedoch ein
 Kunstprojekt des Filmkünstlers <em>Ray Santilli</em>.</p>
-
+\qr[\wikipedia{} Santilli-Film]{https://de.wikipedia.org/wiki/Santilli-Film}
 </li>
 <li><p>Das letzte Bild zeigt einen angeblichen Alien, der in London
 gesichtet worden sein soll. Jedoch ist die Quellenlage äußerst schlecht,
 es ist alles anonym und das gesamte Video, das angeblich existieren
 soll, wurde nie veröffentlicht.</p>
-
+\qr[UFO-Case-Book-Artikel über die London-Aliens]{https://www.ufocasebook.com/londonaliens.html}
 </li>
 </ul>
 <?php include('footer.php'); ?>
