@@ -56,6 +56,9 @@ Höchstwahrscheinlich war es ein Versuch, ein immersives Marketing-ARG zu
 erstellen, wie es z. B. Lost auch vorher gemacht hat. Gescheitert ist
 dieser Plan vermutlich am Streik der amerikanischen Film- und
 Serienautoren zur selben Zeit.
+\qr[\youtube{} Did we discover an alien language?]{https://www.youtube.com/watch?v=k-bEJ2R0dlM} \qr[\wikipedia{} Kecksburg-UFO]{https://en.wikipedia.org/wiki/Kecksburg_UFO_incident}
+\qr[Sarah-Connor-Chronicles als wahrscheinlicher Urheber]{https://screenrant.com/sarah-connor-chronicles-california-drones-mystery/} \qr[\wikipedia{} Autorenstreik]{https://en.wikipedia.org/wiki/2007\%E2\%80\%9308_Writers_Guild_of_America_strike}
 
+\qr[Die \frq geleakten\flq\ Dokumente von Isac]{https://archive.org/details/isaac-caret-q-4-86-research-report/page/n1/mode/2up}
 </p>
 <?php include('footer.php'); ?>
