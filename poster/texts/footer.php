@@ -13,6 +13,9 @@ function replaceKeywordsWithImages(input) {
 
     output = output.replace(/\\skeptoid(\{\})?/g, '<img width=64 src="../skeptoid.png">');
 
+    output = output.replace(/\\frqq?(\{\})?\\*\s*/g, '&raquo;');
+    output = output.replace(/\\flqq?(\{\})?\\*/g, '&laquo;');
+
     return output;
 }
 
