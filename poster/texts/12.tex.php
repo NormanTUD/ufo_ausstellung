@@ -9,10 +9,14 @@ dazu, dass die Abgase spiralförmig abgegeben werden, die sich dann im
 Weltraum ausbreiten. Die Abgase können sich aufgrund der fehlenden
 Atmosphäre bis zu 250 km groß entfalten, da im Weltraum keine Luft oder
 andere Hindernisse vorhanden sind, die die Ausbreitung
-behindern.</p></li>
+behindern.</p>
+
+</li>
 <li><p>Eine zweite Möglichkeit sind Fehlstarts. Die Rakete spiralt  sich
 dabei um sich selbst und stößt weiterhin Abgase ab, die ebenfalls
-spiralförmig sich ausbreiten.</p></li>
+spiralförmig sich ausbreiten.</p>
+
+</li>
 </ul>
 <p>In beiden Fällen entsteht eine sichtbare Spirale, die von der Sonne
 beleuchtet wird und dadurch besonders auffällig ist.</p>

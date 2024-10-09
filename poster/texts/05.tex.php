@@ -25,20 +25,34 @@ gering. Aber unter den ersten 10 Ziffern (0 bis 9, also genau die
 Zahlen, die vereinzelte Ballons anzeigen können), sind bereits 4
 Primzahlen (2, 3, 5, 7), d. h. es besteht eine Chance von 40 %, dass
 eine in diesem Range gewählte Zahl prim ist. Viel höher als
-sonst.</p></li>
+sonst.</p>
+
+</li>
 <li><p>Darunter sind ein Re-Entry, ein Satellit, der in der Atmosphäre
-verglüht, und Starlink, das Satellitensystem von Musk.</p></li>
+verglüht, und Starlink, das Satellitensystem von Musk.</p>
+
+</li>
 <li><p>Darunter ist ein UFO, das sich als hochgewehte Mülltüte
-herausgestellt hat.</p></li>
+herausgestellt hat.</p>
+
+</li>
 <li><p>Daneben ist ein Rauchring, wie er entstehen kann, wenn man große
-Trucks startet.</p></li>
+Trucks startet.</p>
+
+</li>
 <li><p>Daneben sind zwei Bilder von Himmelslaternen, kleinen Kerzen in
 Schläuchen, die von der Hitze der Flamme emporgehoben wird, und dann zu
-fliegen beginnt.</p></li>
+fliegen beginnt.</p>
+
+</li>
 <li><p>Darunter ein Bild von Menschen, die in Wingsuits von einem
 Gebäude springen. Wenn die Wingsuits LED-Lichter haben, können sie
-nachts eigenartig blinken und sorgen für UFO-Berichte.</p></li>
+nachts eigenartig blinken und sorgen für UFO-Berichte.</p>
+
+</li>
 <li><p>Ganz unten ein Bild eines Suchhelikopters mit Searchlight. Auch
-diese sorgen häufig für UFO-Sichtungen.</p></li>
+diese sorgen häufig für UFO-Sichtungen.</p>
+
+</li>
 </ul>
 <?php include('footer.php'); ?>
