@@ -35,6 +35,9 @@ die Primzahlfunktion beschrieben werden:
     </mfrac>
   </mrow>
 </math>
+
+<img src="pz_graph.png">
+
 </p>
 <p>Es ist ersichtlich, dass es immer weniger Primzahlen werden, d. h.
 die Dichte der Primzahlen nimmt ab. Bei einer zufällig gewählten Zahl
