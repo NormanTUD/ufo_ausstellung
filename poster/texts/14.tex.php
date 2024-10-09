@@ -19,7 +19,8 @@ breiterem Publikum bekannt durch die auf Youtube hochgeladenen Aufnahmen
 seines <em>Neuschwabenlandtreffens</em>, einer Gruppe von
 Rechtsesoterikern, die sich regelmäßig in einer Kneipe getroffen haben
 und über ihre Thesen geredet haben.</p>
-
+		\qr[Seite mit Zitaten von Axel Stoll]{https://archive.ph/X4UOz\#selection-976.0-976.1}
+		\qr[\wikipedia{} Axel Stoll]{https://de.wikipedia.org/wiki/Axel_Stoll}
 </li>
 <li><p>Das Bild mit dem weißen Kreis und dem Flugzeugflügel zeigt einen
 <em>Foo Fighter</em>, eine Art UFO, wie sie von allen Seiten im zweiten
@@ -27,6 +28,7 @@ Weltkrieg berichtet worden. Die Nazis dachten, es wäre eine Geheimwaffe
 der Amerikaner und umgekehrt. Diese Kugeln sollen über längere Strecken
 Flugzeuge verfolgt und sich intelligent verhalten haben.</p>
 
+		\qr[\wikipedia{} den Foo-Fighters]{https://en.wikipedia.org/wiki/Foo_fighter}
 </li>
 </ul>
 <?php include('footer.php'); ?>
