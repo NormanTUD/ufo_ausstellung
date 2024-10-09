@@ -9,7 +9,9 @@ einem der Skinny-Bob-Videos Schriftarten genutzt, die nicht existiert
 haben zur Zeit, wo es angeblich aufgenommen worden ist, und das Video
 wurde künstlich gealtert, und man hat die Quellen für diese künstlichen
 Alterungseffekte gefunden. Das Videomaterial selbst ist jedoch, trotz
-intensiver Bemühungen, nicht debunked.</p></li>
+intensiver Bemühungen, nicht debunked.</p>
+\qr[\youtube{} ivan0135]{https://www.youtube.com/@ivan0135/} \qr[Detaillierte Analyse der Skinny-Bob-Bilder]{https://skinnybob.info/}	
+</li>
 <li><p>Der Außerirdische ganz Rechts stammt von einem
 <em>4chan</em>-Thread. Angeblich hat der User an seinem Auto gearbeitet
 und dabei ein Geräusch gehört, schnell ein Bild gemacht und diesen Alien
