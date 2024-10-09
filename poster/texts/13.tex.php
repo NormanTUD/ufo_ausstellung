@@ -16,7 +16,8 @@ Christian County, Kentucky (1955), eine Familie bedrängt haben soll,
 nachdem es mit seinem Raumschiff abgestürzt ist. Es stellte sich später
 heraus, dass es wahrscheinlich fauchende Eulen waren.</p>
 		\qr[\wikipedia{} Kelly-Hopkinsville-Encounter]{https://en.wikipedia.org/wiki/Kelly\%E2\%80\%93Hopkinsville_encounter}
-	\item Darunter das Bild eines Raumschiffes, das Lonnie Zamora gesehen haben 1964 will. Höchstwahrscheinlich ist er auf einen studentischen Scherz hereingefallen.
+</li>
+<li><p>Darunter das Bild eines Raumschiffes, das Lonnie Zamora gesehen haben 1964 will. Höchstwahrscheinlich ist er auf einen studentischen Scherz hereingefallen.
 		\qr[\skeptoid{} Lonnie Zamora]{https://skeptoid.com/episodes/4582}
 </li>
 <li><p>Darunter das Bild eines Raumschiffes, das Lonnie Zamora gesehen
