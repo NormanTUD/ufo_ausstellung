@@ -4,6 +4,18 @@ function generateQRCodeURL(url) {
     return `qr.php?url=${encodeURIComponent(url)}&size=5`;
 }
 
+function replaceKeywordsWithImages(input) {
+    let output = input.replace(/\\wikipedia(\{\})?/g, '<img width=64 src="../wiki.png">');
+
+    output = output.replace(/\\hoaxilla(\{\})?/g, '<img width=64 src="../hoaxilla.png">');
+
+    output = output.replace(/\\youtube(\{\})?/g, '<img width=64 src="../youtube.png">');
+
+    output = output.replace(/\\skeptoid(\{\})?/g, '<img width=64 src="../skeptoid.png">');
+
+    return output;
+}
+
 // Funktion zum Suchen und Ersetzen des LaTeX-ähnlichen Textes und Erstellen einer Tabelle pro <li>-Tag
 function parseQRText() {
     const textNodes = document.querySelectorAll('li'); // Suche nach allen <li>-Elementen
@@ -40,7 +52,7 @@ function parseQRText() {
                 img.style.width = "100px";  // Größe des QR-Codes
 
                 qrCell.appendChild(img);
-                descriptionCell.textContent = description;
+                descriptionCell.innerHTML = replaceKeywordsWithImages(description);
 
                 row.appendChild(qrCell);
                 row.appendChild(descriptionCell);
