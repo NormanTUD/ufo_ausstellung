@@ -44,6 +44,9 @@ Ereignisse verdeutlichen, wie militärische Aktivitäten leicht zu
 Spekulationen über UFOs führen können, und werfen Fragen zur Art und
 Weise auf, wie Informationen über solche Vorfälle vermittelt und
 interpretiert werden.
+\qr[Original-Artikel im Black-Vault]{https://www.theblackvault.com/casefiles/arctic-ufo-photographs-uss-trepang-ssn-674-march-1971/}
+\qr[Artikel von Grenzwissenschaft-Aktuell zum Thema]{https://www.grenzwissenschaft-aktuell.de/erklaerung-fuer-arktis-ufo-fotos-der-uss-trepang20150727/}
 
+\qr[\wikipedia{} USS Trepang]{https://en.wikipedia.org/wiki/USS_Trepang_(SSN-674)}
 </p>
 <?php include('footer.php'); ?>

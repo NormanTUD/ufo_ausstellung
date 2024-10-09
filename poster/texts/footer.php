@@ -18,7 +18,7 @@ function replaceKeywordsWithImages(input) {
 
 // Funktion zum Suchen und Ersetzen des LaTeX-ähnlichen Textes und Erstellen einer Tabelle pro <li>-Tag
 function parseQRText() {
-    const textNodes = document.querySelectorAll('li'); // Suche nach allen <li>-Elementen
+    const textNodes = document.querySelectorAll('li, p');
 
     textNodes.forEach(node => {
         const text = node.textContent;
