@@ -12,6 +12,8 @@ Der Fall wurde nie final aufgelöst, aber es war höchstwahrscheinlich
 eine Form von Folie à deux, wo eine Person sich in eine Psychose
 reinredet, und eine andere, ihr nahestendende Person sich mit
 hineinsaugen lässt.</p>
+		\qr[\wikipedia{} Betty and Barney Hill]{https://de.wikipedia.org/wiki/Betty_und_Barney_Hill}
+		\qr[\wikipedia{} Folie à deux]{https://de.wikipedia.org/wiki/Folie_\%C3\%A0_deux}
 
 </li>
 <li><p>Burkhard Heim: ein deutscher Chemiker und Physiker, der während
